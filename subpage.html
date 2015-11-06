@@ -1,0 +1,188 @@
+<!--
+▒▐█▒▐█▒▐█▀▀▒██░░░▒██░░░▒▐█▀▀█▌░░▒█▒█▒█ 
+▒▐████▒▐█▀▀▒██░░░▒██░░░▒▐█▄▒█▌░░░▀░▀░▀ 
+▒▐█▒▐█▒▐█▄▄▒██▄▄█▒██▄▄█▒▐██▄█▌░░▒▄▒▄▒▄ 
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lisa Vuong</title>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="author" content="Lisa Vuong">
+		<meta name="description" content="Lisa Vuong Portfolio">
+		<meta name="keywords" content="Lisa, Vuong, Portfolio, Design">
+
+		<!--link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/flexslider.css"-->
+
+		<link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Radley' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+		<script src="js/jquery.flexslider.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+			  jQuery(".content").hide();
+			  //toggle the componenet with class msg_body
+			  jQuery(".heading").click(function()
+			  {
+			    jQuery(this).next(".content").slideToggle(500);
+			  });
+			});
+		</script>
+		<script type="text/javascript" charset="utf-8">
+ 			$(window).load(function() {
+    			$('.flexslider').flexslider();
+  		});
+		</script>
+		<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-49652924-1', 'lisavuong.com');
+			  ga('send', 'pageview');
+
+		</script>
+		<style>
+			/* New styles, front and center */
+			* {
+			    margin: 0;
+			    padding: 0;    
+			    -webkit-font-smoothing: antialiased;
+			    -webkit-box-sizing: border-box;
+	            -moz-box-sizing: border-box;
+                 box-sizing: border-box;
+			}
+			.portfolio-grid {
+				max-width: 960px;
+				margin: 0 auto;
+			}
+			.portfolio-grid:before, .portfolio-grid:after {
+			    content: "";
+			    display: table;
+			    clear: both;
+			}
+			.portfolio-item {
+				/* Always left aligned, so the grid messes up less.
+				 * float: left; 
+				 * display: inline-block; /* Let's have the render on the same level! 
+				 * Don't need these two right now, but will if we make smaller grid units
+				 */
+				display: block;
+				padding: 20px 10px 0 10px; /* Let's give each column some breathing space! */
+			}
+			.portfolio-item-brick {
+				width: 100%;
+			}
+			.intro {
+				padding-top: 0px;
+				text-align: center;
+				margin-bottom: 30px;
+			}
+			.intro > a {
+				padding: 0;
+				display: block;
+				padding-bottom: 10px;
+				padding-top: 0;
+			}
+			.intro > a.logo {
+				text-decoration: none;
+				color: #212121;
+				text-transform: uppercase;
+				font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				letter-spacing: 5px;
+				margin-bottom: 20px;
+				padding: 0;
+				padding-bottom: 10px;
+				margin-bottom: 0px;
+				margin-top: 60px;
+				font-size: 3.3em;
+			}
+			.intro > a.link {
+				text-decoration: none;
+				font-family: "PT sans", "Georgia", "serif";
+				color: #bdbdbd;
+				padding-bottom: 10px;
+				font-size: 16px;
+				letter-spacing: 2px;
+			}
+			.intro > a.link:hover {
+				color: #f39c12;
+			}
+			.intro > .inline-link {
+				display: inline-block;
+				padding-bottom: 0px;
+				padding: 10px;
+				padding-top: 0px; 
+			}
+			.portfolio-grid > .h-150 {
+				opacity: 0;
+				height: 100px;
+				/*background-color: #f39c12;  Debugging! */
+				border-bottom: 1px solid #fffffa; /* Debugging */
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<section class="intro">
+				<a class="logo" href="index.html">lisa vuong</a>
+				<a class="link" id="contact" href="mailto:hello.lisavuong@gmail.com">hello.lisavuong@gmail.com</a>
+				<a class="link inline-link" id="resume" href="lisavuong_resume.pdf" target="_blank">resume</a>
+				//
+				<a class="link inline-link" id="blog" href="http://since94.com" target="_blank">blog</a>
+
+			</section>
+			<section class="navigation"><nav></nav></section>
+			<section class="portfolio-grid">
+				<div class="portfolio-item h-150">
+					
+				</div>
+				<div class="portfolio-item h-150">
+					
+				</div>
+				<div class="portfolio-item h-150">
+					
+				</div>
+				<div class="portfolio-item h-150">
+					
+				</div>
+				<div class="portfolio-item h-150">
+					
+				</div>
+				<div class="portfolio-item h-150">
+					
+				</div>
+			</section>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="http://cdn.jsdelivr.net/jquery.velocity/0.1.0/jquery.velocity.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				var _container 		= $('.container');
+				var _portfolioblock	= $('.portfolio-item');
+
+				_portfolioblock.each(function () {
+    				var hue = 'rgb(' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ')';
+    				$(this).css("background-color", hue);
+				});
+
+			    _container.delay(200).velocity({opacity: 1}, 500, function(){
+			        $(function() {
+			            var num = _portfolioblock.length;
+			            _portfolioblock.each(function(i) {
+			                $(this).delay((i++)*100)
+			                .velocity({opacity: 1}, 250)
+			                .velocity({opacity: 0.6}, 150)
+			            })
+			        });
+			    });
+			});
+		</script>
+	</body>
+</html>

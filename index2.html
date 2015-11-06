@@ -1,0 +1,814 @@
+<!--
+▒▐█▒▐█▒▐█▀▀▒██░░░▒██░░░▒▐█▀▀█▌░░▒█▒█▒█ 
+▒▐████▒▐█▀▀▒██░░░▒██░░░▒▐█▄▒█▌░░░▀░▀░▀ 
+▒▐█▒▐█▒▐█▄▄▒██▄▄█▒██▄▄█▒▐██▄█▌░░▒▄▒▄▒▄ 
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lisa Vuong</title>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="author" content="Lisa Vuong">
+		<meta name="description" content="Lisa Vuong Portfolio">
+		<meta name="keywords" content="Lisa, Vuong, Portfolio, Design">
+
+		<!--link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/flexslider.css"-->
+		<link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Radley' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.3.11/slick.css"/>
+
+		<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-49652924-1', 'lisavuong.com');
+			  ga('send', 'pageview');
+
+		</script>
+		<style>
+			/* New styles, front and center */
+			* {
+			    margin: 0;
+			    padding: 0;    
+			    -webkit-font-smoothing: antialiased;
+			    -webkit-box-sizing: border-box;
+	            -moz-box-sizing: border-box;
+                 box-sizing: border-box;
+			}
+			.portfolio-grid {
+				max-width: 960px;
+				margin: 0 auto;
+			}
+			.portfolio-grid:before, .portfolio-grid:after {
+			    content: "";
+			    display: table;
+			    clear: both;
+			}
+			.portfolio-item {
+				/* Always left aligned, so the grid messes up less.
+				 * float: left; 
+				 * display: inline-block; /* Let's have the render on the same level! 
+				 * Don't need these two right now, but will if we make smaller grid units
+				 */
+				display: block;
+			}
+			.portfolio-item {
+				width: 100%;
+			}
+			.portfolio-item > .item-image {
+
+			}
+			.portfolio-item > .fold-content {
+				font-family: "PT sans", "Georgia", "serif";
+				color: #333;
+				padding: 20px;
+				font-size: 16px;
+				line-height: 1.6;
+				opacity: 1;
+				display: none;
+			}
+
+			.fold-content > .spec-container {
+				width: inherit;
+			}
+
+			.spec-container > .specs {
+				width: 32%;
+				border-left: 1px solid #999; /*1px solid #999; or 2px solid rgba(243, 156, 18, 0.5) ?*/
+				display: inline-block;
+				color: #666;
+				padding-left: 10px;
+				font-size: 16px;
+				vertical-align: top;
+			}
+			.specs > .keyword {
+				text-transform: uppercase;
+				color: #666;
+				font-size: 14px;
+				display: block;
+				padding-bottom: 5px;
+				font-weight: bold;
+			}
+
+			.fold-content > .slider {
+				margin-top: 20px;
+				width: 100%;
+			}
+
+			.banner { position: relative; overflow: auto; }
+    		.banner li { list-style: none; }
+        	.banner ul li { float: left; }
+
+			.slider ul > li {
+				padding-top: 20px;
+				width: 100%;
+				height: auto;
+				background-color: #999;
+			}
+			.slider ul > li:before {
+				padding-top: 56.25%;
+				content: "";
+				display: block;
+			}
+			.slider ul > li > * {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			.fold-content > .description {
+				padding-top: 20px;
+			}
+			.intro {
+				padding-top: 0px;
+				text-align: center;
+				margin-bottom: 30px;
+			}
+			.intro > a {
+				padding: 0;
+				display: block;
+				padding-bottom: 10px;
+				padding-top: 0;
+			}
+			.intro > a.logo {
+				text-decoration: none;
+				color: #212121;
+				text-transform: uppercase;
+				font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				letter-spacing: 5px;
+				margin-bottom: 20px;
+				padding: 0;
+				padding-bottom: 10px;
+				margin-bottom: 0px;
+				margin-top: 60px;
+				font-size: 3.3em;
+			}
+			.intro > a.link {
+				text-decoration: none;
+				font-family: "PT sans", "Georgia", "serif";
+				color: #bdbdbd;
+				padding-bottom: 10px;
+				font-size: 16px;
+				letter-spacing: 2px;
+			}
+			.intro > a.link:hover {
+				color: #f39c12;
+			}
+			.intro > .inline-link {
+				display: inline-block;
+				padding-bottom: 0px;
+				padding: 10px;
+				padding-top: 0px; 
+			}
+			.h-150 {
+				opacity: 0; /* important for the fade-in */ 
+				height: 150px;
+				/*background-color: #f39c12;  Debugging! */
+				border-bottom: 1px solid #fffffa; /* Debugging */
+			}
+
+			.footer{
+				text-align: center;
+				width: 1000px;
+				margin-right: auto;
+				margin-left: auto;
+				text-decoration: none;
+				padding-bottom: 20px;
+				background-color: #fafafa;
+				margin-top: 20px;
+			}
+			.footer h1{
+				text-transform: uppercase;
+				font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				font-size: 2em;
+				letter-spacing: 1px;
+				margin-bottom: -10px;
+			}
+
+			.footer .current p{
+				text-transform: uppercase;
+				font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				font-size:1.25em;
+				display: inline-block;
+				padding-left: 10px;
+
+			}
+			.footer a{
+				text-transform: uppercase;
+				text-decoration: none;
+				font-family:"Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+				font-size:1.7em;
+				color:#cccccc;
+				margin-left: 5px;
+				
+			}
+			.footer img{
+				margin-right: 3px;
+			}
+			.foot_links{
+				margin-top:20px;
+				margin-left:10px;
+			}
+			.foot_links img{
+				margin-right:5px;
+			}
+			.footer a:hover{
+				color:#f39c12;
+			}
+			.reading, .listening, .playing{
+				display: inline-block;
+				margin-bottom: 10px;
+				padding-left: 30px;
+				padding-top:15px;
+				padding-bottom: 15px;
+			}
+			hr{
+				height: 6px;
+				background-color: #282828;
+				border: none;
+				margin-bottom:20px;
+			}
+			.first, .second{
+				display: inline-block;
+				padding: 10px;
+				line-height: 30px;
+
+			}
+			#copyright{
+				margin-bottom: 0px;
+				text-align: center;
+				margin-bottom: -15px;
+				font-size: 12px;
+			}
+
+			@media only screen  
+			and (max-width: 600px) {
+				
+				.h-150 {
+					height: 100px;
+				}
+				.fold-content > .specs {
+					font-size: 14px;
+				}
+			}
+
+			/* slider */
+			.slick-prev {
+				left: 10px;
+			} 
+			.slick-next {
+				right: 10px;
+			}
+			.slider div.slide {
+				width: 100%;
+				max-width: 100%;
+				background-color: #4192f4;
+			}
+
+			.slider div.slide:before {
+				content: "";
+				display: block;
+				margin-top: 56.25%;
+			}
+			.slide .slide-content {
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.slide-content img {
+				width: 100%;
+				height: auto;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<section class="intro">
+				<a class="logo" href="index.html">lisa vuong</a>
+				<a class="link" id="contact" href="mailto:hello.lisavuong@gmail.com">hello.lisavuong@gmail.com</a>
+				<a class="link inline-link" id="resume" href="lisavuong_resume.pdf" target="_blank">resume</a>
+				//
+				<a class="link inline-link" id="blog" href="http://since94.com" target="_blank">blog</a>
+
+			</section>
+			<section class="navigation"><nav></nav></section>
+			<section class="portfolio-grid">
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+				<div class="portfolio-item">
+					<div class="item-image h-150"></div>
+					<div class="fold-content">
+						<div class="spec-container">
+							<div class="specs">
+								<span class="keyword">Role</span>
+								Wittle Lisa
+							</div>
+							<div class="specs">
+								<span class="keyword">Using</span>
+								Chopsticks<br>
+								Proxima Nova
+							</div>
+							<div class="specs">
+								<span class="keyword">For</span>
+								Mochi<br>
+								Hotpot
+							</div>
+						</div>
+
+						<div class="slider">
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10012702_10152431047468453_7770889695315133876_o.jpg">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-n.ak.fbcdn.net/sphotos-a.ak/hphotos-ak-xpa1/v/t1.0-9/487450_10151572795273453_1278815817_n.jpg?oh=cacca5493fef722b76c713ebaa6ad8de&oe=54EE788E&__gda__=1421460821_a39b97af1cb02573efd78ee385644ef2">
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slide-content">
+									your content
+									<img src="https://z-1-scontent-b.xx.fbcdn.net/hphotos-xap1/t31.0-8/178240_10151339746438453_898832490_o.jpg">
+								</div>
+							</div>
+						</div>
+
+						<div class="description">
+							Farm-to-table cardigan distillery, American Apparel Brooklyn Marfa lomo hella. Four loko art party hoodie, try-hard cred plaid irony distillery fap American Apparel artisan tousled direct trade Odd Future. Bicycle rights 8-bit asymmetrical lo-fi small batch. Kitsch bitters wayfarers, heirloom McSweeney's Vice drinking vinegar Shoreditch. Letterpress cornhole Odd Future Wes Anderson pop-up. Bushwick Tumblr church-key, food truck hoodie Brooklyn chambray kale chips cardigan fixie gentrify lo-fi Blue Bottle. Bushwick tousled artisan street art sriracha gluten-free Tonx meggings, chillwave vegan heirloom skateboard.
+						</div>
+					</div>
+				</div>
+
+			</section>
+		</div>
+		<div class="footer">
+			<hr>
+			<div class="current">
+			<h1>I am currently</h1>
+				<p>
+				<div class="reading">
+					<p><img src="images/book.jpg" height="20px" alt="book">Reading </p><a href="http://www.goodreads.com/book/show/7665458-richard-yates" target="_blank">Richard Yates</a>
+				</div>
+				<div class="listening">
+					<p><img src="images/headphones.jpg" height="20px" alt="headphones">Listening to </p><a href="http://www.radiolab.org" target="_blank">RadioLab</a>
+				</div>
+				<div class="playing">
+					<p><img src="images/control.jpg" height="15px" alt="control">Playing </p><a href="http://www.stanleyparable.com/" target="_blank">The Stanley Parable</a>
+				</div>	
+			</div>
+			<h1>i'd love to meet you</h1>
+			<div class="foot_links">
+				<div class="first">
+					<a href="http://www.rdio.com/people/LisaVuong94/" target="_blank"><img src="images/rdio.svg" height="25px" alt="rdio"> The Soundtrack to my Life</a>
+					<p>
+					<a href="http://www.linkedin.com/profile/view?id=181368150&trk=nav_responsive_tab_profile_pic" target="_blank"><img src="images/linkedin.svg" height="25px" alt="linkedin">My Late Night Tweets</a>
+				</div>
+				<div class="second">
+					<a href="http://www.instagram.com/lisaavuong" target="_blank"><img src="images/instagram.jpg" height="24px" alt="instagram">Amateur iPhoneography</a>
+					<p>
+					<a href="mailto:hello.lisavuong@gmail.com"><img src="images/mail.png" height="30px" alt="mail">Don't worry, I don't bite </a>
+				</div>
+				<p id="copyright">&copy; 2014 Lisa Vuong</p>
+			</div>
+		</div>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.jsdelivr.net/jquery.velocity/0.1.0/jquery.velocity.min.js"></script>
+		<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.slick/1.3.11/slick.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				//cache jQueries
+				var _container 		= $('.container');
+				var _portfolioblock	= $('.item-image');
+				var _foldcontent	= $('.fold-content');
+
+				//touch support?
+				document.addEventListener("touchstart", function(){}, true)
+
+				_portfolioblock.each(function () {
+    				var hue = 'rgb(' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ')';
+    				$(this).css("background-color", hue);
+				});
+
+			    _container.delay(200).velocity({opacity: 1}, 500, function(){
+			        $(function() {
+			            var num = _portfolioblock.length;
+			            _portfolioblock.each(function(i) {
+			                $(this).delay((i++)*100)
+			                .velocity({opacity: 1}, 250)
+			                .velocity({opacity: 0.6}, 150)
+			            });
+			        });
+			    });
+
+			    _portfolioblock.click(function() {
+			    	if($(this).next().hasClass("unfolded")){
+			    		$(this).next().slideUp();
+			    		$(this).next().removeClass("unfolded");
+			    	}
+			    	else {
+					    _foldcontent.slideUp(300);
+						_foldcontent.removeClass("unfolded");
+					    $(this).next().addClass("unfolded");
+					    $(this).next().slideDown(200);
+					}
+				    return false;
+  				});
+			    
+				$('.slider').slick({
+					infinite: true,
+					speed: 300,
+					slidesToShow: 1,
+					adaptiveHeight: true
+				});
+
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,235 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* end css reset */
+/*Fonts*//
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
+
+body{
+	background-color: #fffffa;
+}
+.layer1 {
+	margin-top:60px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	min-width: 600px;
+}
+
+
+.heading {
+	color: #000000;
+	padding-bottom:5px;
+	cursor: pointer;
+	position: relative;
+	height:150px;
+	width: 1000px;
+}
+
+/*.heading img:hover{
+	opacity:0.6;
+	z-index: -1;
+}*/
+
+.content {
+	margin-bottom: 30px;
+	
+}
+.content .flexslider{
+	margin-top: 30px;
+	margin-left: 50px;
+	margin-right: auto;
+}
+.content p { 
+	margin-right:auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: -5px;
+	font-family:"PT sans", "Radley", "serif";
+	line-height: 20px;
+	width: 700px;
+}
+.content a{
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #bdbdbd;
+	font-family: "Pathway Gothic One";
+	font-size:1.25em;
+	letter-spacing: 1px;
+}
+.content a:hover{
+	color: #f39c12;
+}
+p{
+	padding:5px;
+}
+.develop p{
+	margin-top:-5px;
+	font-size: 1em;
+}
+.develop a{
+	font-size:1em;
+}
+
+.prototype{
+	background-color: #fff;
+	width: 150px; 
+
+}
+
+.hello{
+	height:150px;
+	width: 1000px;
+	background-image: url("images/hello_1000_150.jpg") no-repeat;
+	background-color: #000000; 
+	overflow: hidden;
+}
+.intro h1{
+	margin-top:60px;
+	size: 1.5em;
+}
+.intro{
+	padding-top: 60px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+.intro .logo{
+	font-size:3.3em;
+	padding-bottom: 80px;
+	text-decoration: none;
+	color: #212121;
+	text-transform: uppercase;
+	font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+	letter-spacing: 5px;
+	margin-bottom: 20px;
+}
+.intro .links{
+	text-decoration: none;
+	font-family: "PT sans", "Georgia", "serif";
+	color: #bdbdbd;
+	padding: 10px;
+	letter-spacing: 2px;
+}
+.intro .logo:hover{
+	color:#000000;
+}
+.intro .links:hover{
+	color: #f39c12;
+}
+.footer{
+	text-align: center;
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	text-decoration: none;
+	padding-bottom: 20px;
+	background-color: #fafafa;
+	margin-top: 20px;
+}
+.footer h1{
+	text-transform: uppercase;
+	font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+	font-size: 2.5em;
+	letter-spacing: 1px;
+	margin-bottom: -10px;
+}
+
+.footer .current p{
+	text-transform: uppercase;
+	font-family: "Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+	font-size:1.25em;
+	display: inline-block;
+	padding-left: 10px;
+
+}
+.footer a{
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family:"Pathway Gothic One", "Helvetica", "Arial", "Sans-serif";
+	font-size:1.7em;
+	color:#cccccc;
+	margin-left: 5px;
+	
+}
+.footer img{
+	margin-right: 3px;
+}
+.foot_links{
+	margin-top:20px;
+	margin-left:10px;
+}
+.foot_links img{
+	margin-right:5px;
+}
+.footer a:hover{
+	color:#f39c12;
+}
+.reading, .listening, .playing{
+	display: inline-block;
+	margin-bottom: 10px;
+	padding-left: 30px;
+	padding-top:15px;
+	padding-bottom: 15px;
+}
+hr{
+	height: 6px;
+	background-color: #282828;
+	border: none;
+	margin-bottom:20px;
+}
+.first, .second{
+	display: inline-block;
+	padding: 10px;
+	line-height: 30px;
+
+}
+#copyright{
+	margin-bottom: 0px;
+	text-align: center;
+	margin-bottom: -15px;
+	font-size: 12px;
+}
+
