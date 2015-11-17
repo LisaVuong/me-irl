@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	//cache jQueries
+	//cache jQuerie
 	var _container 		= $('.container');
 	var _portfolioblock	= $('.item-image');
 	var _foldcontent	= $('.fold-content');
@@ -33,7 +33,12 @@ $(document).ready(function(){
 		resizetapestrys();
 	});
 
-
+    $("#lightSlider").lightSlider({
+        item: 1,
+        controls: false,
+        enableDrag: false,
+        adaptiveHeight: true
+    });
 
     _portfolioblock.click(function() {
         var _clickindex = _portfolioblock.index(this);
@@ -52,7 +57,7 @@ $(document).ready(function(){
                 var that = $(this);
                 setTimeout(function() {
                     $("html, body").animate({
-                        scrollTop: that.offset().top-150
+                        scrollTop: that.offset().top-210
                     },300);
                 }, 100);
             });
