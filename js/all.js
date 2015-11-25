@@ -35,6 +35,7 @@ $(document).ready(function(){
 
     $("#lightSlider").lightSlider({
         item: 1,
+        autowidth: true,
         controls: false,
         enableDrag: false,
         adaptiveHeight: true
