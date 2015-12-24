@@ -1,0 +1,192 @@
+//
+//
+//	_imageSlider.scss
+//
+//
+
+@import 'compass/css3';
+
+$slider-max-width: 100%;		// Image default max width;
+
+$next-arrow-img: url('../img/slider-arrow-right.png');	// Icon for next arrow
+$prev-arrow-img: url('../img/slider-arrow-left.png');		// Icon for prev arrow
+$arrow-size: 35px;																			// Arrow diameter
+$arrow-position: 50px;																	// Arrow distance from gallery
+
+$nav-dot-size: 13px;						// Nav dot diameter
+$nav-font-size: 12px;						// Nav label font size
+$nav-font-color: gray;					// Nav label font color
+$nav-color: #d8d8d8;						// Nav dot unselected color
+$nav-selected-color: #606060;		// Nav dot selected and hover color
+
+$nav-dot-size-m: 9px;						// Mobile nav dot diameter
+$nav-font-size-m: 9px;					// Mobile nav label font size
+
+/*
+
+	Slider markup after Javascript buildout
+	Use as reference when styling
+
+	<div class="image-slider">
+		<div class="slider-gallery">
+			<div class="gallery-wrapper">
+				<div class="gallery-holder">
+					<img class="gallery-image" src="">
+					<img class="gallery-image" src="">
+					<img class="gallery-image" src="">
+					<img class="gallery-image" src="">
+				</div>
+			</div>
+			<div class="gallery-arrow next"></div>
+			<div class="gallery-arrow prev"></div>
+		</div>
+		<div class="slider-nav">
+			<div class="nav-list">
+				<div class="nav-label">Final Work</div>
+				<div class="nav-dot select"></div>
+				<div class="nav-dot"></div>
+			</div>
+			<div class="nav-spacing"></div>
+			<div class="nav-list">
+				<div class="nav-label">Process Work</div>
+				<div class="nav-dot"></div>
+				<div class="nav-dot"></div>
+			</div>
+		</div>
+	</div>
+
+*/
+
+.image-slider{
+	max-width: $slider-max-width;
+	margin:0;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+
+	@include flexbox((
+    display: flex,
+		flex-wrap: wrap,
+    flex-direction: row,
+		justify-content: center,
+		align-content: center
+  ));
+}
+
+.slider-gallery{
+	position: relative;
+}
+
+.gallery-wrapper{
+	margin: 0;
+  overflow: hidden;
+}
+
+.gallery-holder{
+	margin: 0;
+	height: auto;
+}
+
+.gallery-image{
+	float: left;
+	height: 100%;
+	margin-top: auto;
+	object-fit: cover;
+}
+
+.gallery-arrow{
+	position: absolute;
+	top: 45%;		// does not consider arrow size, change to calc eventually
+	width: $arrow-size;
+	height: $arrow-size;
+	background-size: contain;
+  background-repeat: no-repeat;
+	background-position: center;
+
+	@include transition(opacity, 0.5s);
+	opacity: .5;
+	&:hover{
+		opacity: .7;
+	}
+	&.next{
+		right: -1 * $arrow-position;
+		background-image: $next-arrow-img;
+	}
+	&.prev{
+		left: -1 * $arrow-position;
+		background-image: $prev-arrow-img;
+	}
+}
+
+.slider-nav{
+	width: 100%;
+	@include flexbox((
+    display: flex,
+		flex-wrap: nowrap,
+    flex-direction: row,
+		justify-content: center,
+		align-content: center
+  ));
+}
+
+.nav-list{
+	margin: 0;
+	margin-top: 15px;
+	padding: 0;
+	list-style: none;
+}
+
+.nav-label{
+	margin-bottom: 8px;
+	margin-left: 5px;
+	font-size: $nav-font-size;
+	color: $nav-font-color;
+}
+
+.nav-spacing{
+	width: 1px;
+	height: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: auto;
+	background-color: $nav-color;
+}
+
+.nav-dot{
+	width: $nav-dot-size;
+	height: $nav-dot-size;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding: 0;
+	display: inline-block;
+	border-radius: 10px;
+	background-color: $nav-color;
+	@include transition(background-color 0.4s ease-in-out);
+
+	&.select{
+		//transform: scale(1.1, 1.1);
+		//@include transition(transform .1s ease-in-out);
+		background-color: $nav-selected-color;
+	}
+
+	&:hover{
+		background-color: $nav-selected-color;
+	}
+}
+
+
+
+@media screen and (max-width: $break-large){
+	.nav-spacing{
+		height: 12px;
+	}
+	.nav-dot{
+		width: $nav-dot-size-m;
+		height: $nav-dot-size-m;
+	}
+	.nav-label{
+		font-size: $nav-font-size-m;
+	}
+}

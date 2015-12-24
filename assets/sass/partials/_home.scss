@@ -1,0 +1,14 @@
+/**
+ *	Homepage
+ */
+
+#home{
+	padding-right: $home-right-padding;
+	padding-bottom: $home-right-padding;
+}
+
+@media screen and (max-width: $break-large){
+	#home{
+		padding: 8vw;
+	}
+}

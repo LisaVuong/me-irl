@@ -1,0 +1,35 @@
+/**
+ *
+ *	Mixin for type consistency
+ *
+ */
+
+// base type settings
+$base-font-size: 2rem;
+$base-line-height: 1 * $base-font-size;
+
+@function font-setting($level) {
+  @return ((($level + 3)/3) * $base-spacing);
+}
+
+@function line-setting($level) {
+  @return ((($level + 3)/3) * $base-line-height);
+}
+
+// $level must be > -3
+@mixin type-setting($level) {
+  font-size: font-setting($level);
+  line-height: line-setting($level);
+}
+
+/**
+ *
+ *	Standardized spacing
+ *
+ */
+
+$base-spacing: 1rem;
+
+@function spacing($level) {
+  @return (((0.5 * $level) + 1) * $base-spacing);
+}

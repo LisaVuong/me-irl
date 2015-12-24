@@ -1,0 +1,1068 @@
+/**
+ *
+ *	Mixin for type consistency
+ *
+ */
+/**
+ *
+ *	Standardized spacing
+ *
+ */
+/**
+ *	Globals
+ */
+/* line 5, ../sass/base/_global.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 9, ../sass/base/_global.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  color: #262626;
+  font-size: 62.5%;
+  font-family: Karla, Helvetica;
+}
+
+/* line 18, ../sass/base/_global.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* line 23, ../sass/base/_global.scss */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 29, ../sass/base/_global.scss */
+hr {
+  border: none;
+}
+
+/* line 33, ../sass/base/_global.scss */
+a {
+  text-decoration: none;
+  color: #262626;
+}
+
+/* line 38, ../sass/base/_global.scss */
+p {
+  margin: 0;
+}
+
+/*
+
+	Slider markup after Javascript buildout
+	Use as reference when styling
+
+	<div class="image-slider">
+		<div class="slider-gallery">
+			<div class="gallery-wrapper">
+				<div class="gallery-holder">
+					<img class="gallery-image" src="">
+					<img class="gallery-image" src="">
+					<img class="gallery-image" src="">
+					<img class="gallery-image" src="">
+				</div>
+			</div>
+			<div class="gallery-arrow next"></div>
+			<div class="gallery-arrow prev"></div>
+		</div>
+		<div class="slider-nav">
+			<div class="nav-list">
+				<div class="nav-label">Final Work</div>
+				<div class="nav-dot select"></div>
+				<div class="nav-dot"></div>
+			</div>
+			<div class="nav-spacing"></div>
+			<div class="nav-list">
+				<div class="nav-label">Process Work</div>
+				<div class="nav-dot"></div>
+				<div class="nav-dot"></div>
+			</div>
+		</div>
+	</div>
+
+*/
+/* line 60, ../sass/vendor/_imageSlider.scss */
+.image-slider {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+/* line 78, ../sass/vendor/_imageSlider.scss */
+.slider-gallery {
+  position: relative;
+}
+
+/* line 82, ../sass/vendor/_imageSlider.scss */
+.gallery-wrapper {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* line 87, ../sass/vendor/_imageSlider.scss */
+.gallery-holder {
+  margin: 0;
+  height: auto;
+}
+
+/* line 92, ../sass/vendor/_imageSlider.scss */
+.gallery-image {
+  float: left;
+  height: 100%;
+  margin-top: auto;
+  object-fit: cover;
+}
+
+/* line 99, ../sass/vendor/_imageSlider.scss */
+.gallery-arrow {
+  position: absolute;
+  top: 45%;
+  width: 35px;
+  height: 35px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-transition: opacity, 0.5s;
+  -o-transition: opacity, 0.5s;
+  -webkit-transition: opacity, 0.5s;
+  transition: opacity, 0.5s;
+  opacity: .5;
+}
+/* line 110, ../sass/vendor/_imageSlider.scss */
+.gallery-arrow:hover {
+  opacity: .7;
+}
+/* line 113, ../sass/vendor/_imageSlider.scss */
+.gallery-arrow.next {
+  right: -50px;
+  background-image: url("../img/slider-arrow-right.png");
+}
+/* line 117, ../sass/vendor/_imageSlider.scss */
+.gallery-arrow.prev {
+  left: -50px;
+  background-image: url("../img/slider-arrow-left.png");
+}
+
+/* line 123, ../sass/vendor/_imageSlider.scss */
+.slider-nav {
+  width: 100%;
+  display: -webkit-flex;
+  -webkit-flex-wrap: nowrap;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-content: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+/* line 134, ../sass/vendor/_imageSlider.scss */
+.nav-list {
+  margin: 0;
+  margin-top: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 141, ../sass/vendor/_imageSlider.scss */
+.nav-label {
+  margin-bottom: 8px;
+  margin-left: 5px;
+  font-size: 12px;
+  color: gray;
+}
+
+/* line 148, ../sass/vendor/_imageSlider.scss */
+.nav-spacing {
+  width: 1px;
+  height: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: auto;
+  background-color: #d8d8d8;
+}
+
+/* line 157, ../sass/vendor/_imageSlider.scss */
+.nav-dot {
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 0;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #d8d8d8;
+  -moz-transition: background-color 0.4s ease-in-out;
+  -o-transition: background-color 0.4s ease-in-out;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+}
+/* line 168, ../sass/vendor/_imageSlider.scss */
+.nav-dot.select {
+  background-color: #606060;
+}
+/* line 174, ../sass/vendor/_imageSlider.scss */
+.nav-dot:hover {
+  background-color: #606060;
+}
+
+@media screen and (max-width: 700px) {
+  /* line 182, ../sass/vendor/_imageSlider.scss */
+  .nav-spacing {
+    height: 12px;
+  }
+
+  /* line 185, ../sass/vendor/_imageSlider.scss */
+  .nav-dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  /* line 189, ../sass/vendor/_imageSlider.scss */
+  .nav-label {
+    font-size: 9px;
+  }
+}
+/**
+ *
+ *	Modified from
+ *	Creative Button Styles by Tympanus.net
+ *
+ *	http://tympanus.net/Development/CreativeButtons/
+ *
+*/
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon/icomoon.eot");
+  src: url("../fonts/icomoon/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.woff") format("woff"), url("../fonts/icomoon/icomoon.ttf") format("truetype"), url("../fonts/icomoon/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* General button style (reset) */
+/* line 36, ../sass/vendor/_buttonComponent.scss */
+.btn {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* line 56, ../sass/vendor/_buttonComponent.scss */
+.btn:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+/* line 66, ../sass/vendor/_buttonComponent.scss */
+.btn:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 78, ../sass/vendor/_buttonComponent.scss */
+.icon-arrow-right:before {
+  content: "\e00d";
+}
+
+/* Button 4 */
+/* line 83, ../sass/vendor/_buttonComponent.scss */
+.btn-4 {
+  border-radius: 50px;
+  border: 3px solid #fff;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* line 90, ../sass/vendor/_buttonComponent.scss */
+.btn-4:active {
+  border-color: #17954c;
+  color: #17954c;
+}
+
+/* line 95, ../sass/vendor/_buttonComponent.scss */
+.btn-4:hover {
+  background: #24b662;
+}
+
+/* line 99, ../sass/vendor/_buttonComponent.scss */
+.btn-4:before {
+  position: absolute;
+  height: 100%;
+  font-size: 125%;
+  line-height: 3.5;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* line 110, ../sass/vendor/_buttonComponent.scss */
+.btn-4:active:before {
+  color: #17954c;
+}
+
+/* Button 4c */
+/* line 115, ../sass/vendor/_buttonComponent.scss */
+.btn-4c:before {
+  left: 70%;
+  opacity: 0;
+  top: 0;
+}
+
+/* line 121, ../sass/vendor/_buttonComponent.scss */
+.btn-4c:hover:before {
+  left: 80%;
+  opacity: 1;
+}
+
+/**
+ *
+ *	Modified from
+ *	Creative Link Styles by Tympanus.net
+ *
+ *	http://tympanus.net/Development/CreativeLinkEffects/
+ *
+*/
+/* Effect 17: move up fade out, push border */
+/* line 21, ../sass/vendor/_linkComponent.scss */
+.effect {
+  text-shadow: none;
+  position: relative;
+}
+
+/* line 26, ../sass/vendor/_linkComponent.scss */
+.effect::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  opacity: 0;
+  -moz-transform: translateY(5px);
+  -ms-transform: translateY(5px);
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  -moz-transition: opacity, 0.3s;
+  -o-transition: opacity, 0.3s;
+  -webkit-transition: opacity, 0.3s;
+  transition: opacity, 0.3s;
+  pointer-events: none;
+}
+
+/* line 40, ../sass/vendor/_linkComponent.scss */
+.effect:hover::before,
+.effect:focus::before {
+  opacity: 1;
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+/**
+ *	Homepage
+ */
+/* line 5, ../sass/partials/_home.scss */
+#home {
+  padding-right: 13vw;
+  padding-bottom: 13vw;
+}
+
+@media screen and (max-width: 700px) {
+  /* line 11, ../sass/partials/_home.scss */
+  #home {
+    padding: 8vw;
+  }
+}
+/* line 1, ../sass/partials/_home-splash.scss */
+.splash {
+  width: 100%;
+  height: 100%;
+  padding-top: 15.4vw;
+  padding-left: 22vw;
+  padding-bottom: 11vw;
+}
+/* line 9, ../sass/partials/_home-splash.scss */
+.splash hr {
+  margin: 0;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  width: 9.5rem;
+  height: 4px;
+  background-color: #50e3c2;
+}
+/* line 18, ../sass/partials/_home-splash.scss */
+.splash .icons {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+/* line 26, ../sass/partials/_home-splash.scss */
+.splash .effect {
+  padding: 10px 0;
+}
+/* line 12, ../sass/vendor/_linkComponent.scss */
+.splash .effect:hover, .splash .effect:focus {
+  color: #50e3c2;
+}
+/* line 15, ../sass/vendor/_linkComponent.scss */
+.splash .effect:before {
+  background: #50e3c2;
+}
+/* line 29, ../sass/partials/_home-splash.scss */
+.splash .effect:before {
+  bottom: 15%;
+}
+
+/* line 35, ../sass/partials/_home-splash.scss */
+.splash-title {
+  margin-bottom: 5rem;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: space-between;
+  -webkit-align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+/* line 45, ../sass/partials/_home-splash.scss */
+.splash-title .logo {
+  width: 100%;
+  font-size: 3.33333rem;
+  line-height: 6.66667rem;
+  font-weight: 700;
+}
+/* line 51, ../sass/partials/_home-splash.scss */
+.splash-title .contact {
+  width: 100%;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  line-height: 2.66667rem;
+}
+/* line 56, ../sass/partials/_home-splash.scss */
+.splash-title .contact span {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+/* line 61, ../sass/partials/_home-splash.scss */
+.splash-title .contact a {
+  color: #9B9B9B;
+}
+
+/* line 67, ../sass/partials/_home-splash.scss */
+.splash-intro {
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+/* line 76, ../sass/partials/_home-splash.scss */
+.splash-intro .current {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 2rem;
+  line-height: 2.66667rem;
+}
+/* line 82, ../sass/partials/_home-splash.scss */
+.splash-intro .links {
+  width: 100%;
+  font-size: 1.33333rem;
+  line-height: 2.66667rem;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+/* line 93, ../sass/partials/_home-splash.scss */
+.splash-intro .links .link {
+  margin-right: 1rem;
+}
+/* line 97, ../sass/partials/_home-splash.scss */
+.splash-intro .links a {
+  color: #9B9B9B;
+}
+
+@media screen and (max-width: 700px) {
+  /* line 104, ../sass/partials/_home-splash.scss */
+  .splash {
+    padding: 0;
+    padding-bottom: 11vw;
+  }
+
+  /* line 108, ../sass/partials/_home-splash.scss */
+  .links {
+    margin-bottom: 1rem;
+  }
+
+  /* line 111, ../sass/partials/_home-splash.scss */
+  .link {
+    width: 100%;
+  }
+}
+/* line 2, ../sass/partials/_home-portfolio.scss */
+.item-side {
+  margin-left: auto;
+  margin-right: 3.14286vw;
+  text-align: right;
+  display: -webkit-flex;
+  -webkit-flex-wrap: nowrap;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+/* line 15, ../sass/partials/_home-portfolio.scss */
+.item-side .number {
+  font-family: Lora, serif;
+  font-size: 1.33333rem;
+  line-height: 2.66667rem;
+  color: #9B9B9B;
+}
+
+/* line 23, ../sass/partials/_home-portfolio.scss */
+.item-main {
+  width: 65vw;
+  margin-bottom: 3.5rem;
+}
+/* line 27, ../sass/partials/_home-portfolio.scss */
+.item-main .name {
+  display: inline-block;
+  font-size: 2.5rem;
+  line-height: 5rem;
+}
+/* line 31, ../sass/partials/_home-portfolio.scss */
+.item-main .website {
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: #9B9B9B;
+}
+/* line 36, ../sass/partials/_home-portfolio.scss */
+.item-main .title {
+  font-family: Lora, serif;
+  font-size: 1.33333rem;
+  line-height: 2rem;
+  color: #9B9B9B;
+}
+
+/* line 45, ../sass/partials/_home-portfolio.scss */
+.portfolio-divider, .item-title, .item-content {
+  position: relative;
+  display: -webkit-flex;
+  -webkit-flex-wrap: nowrap;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: flex-end;
+  -webkit-align-content: stretch;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: stretch;
+}
+
+/* line 57, ../sass/partials/_home-portfolio.scss */
+.portfolio-divider {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-size: 1.33333rem;
+  line-height: 2.66667rem;
+  color: #9B9B9B;
+}
+/* line 63, ../sass/partials/_home-portfolio.scss */
+.portfolio-divider .item-main {
+  display: -webkit-flex;
+  -webkit-flex-wrap: nowrap;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: flex-start;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+/* line 71, ../sass/partials/_home-portfolio.scss */
+.portfolio-divider .item-main p {
+  white-space: nowrap;
+  margin-right: 2.5rem;
+}
+/* line 76, ../sass/partials/_home-portfolio.scss */
+.portfolio-divider .item-main hr {
+  width: 100%;
+  height: 1px;
+  margin-top: 13px;
+  background-color: #9B9B9B;
+}
+
+/* line 86, ../sass/partials/_home-portfolio.scss */
+.item-title {
+  -webkit-align-items: baseline;
+  align-items: baseline;
+}
+
+/* line 95, ../sass/partials/_home-portfolio.scss */
+.item-content hr {
+  margin: 1rem;
+  margin-left: auto;
+  margin-right: 0;
+}
+/* line 101, ../sass/partials/_home-portfolio.scss */
+.item-content .top-divider {
+  width: 6.5rem;
+  height: 4px;
+}
+/* line 106, ../sass/partials/_home-portfolio.scss */
+.item-content .divider {
+  width: 11rem;
+  height: 1px;
+  background-color: #BFBFBF;
+}
+/* line 112, ../sass/partials/_home-portfolio.scss */
+.item-content .spec-name, .item-content a {
+  float: right;
+  clear: both;
+  font-size: 1.16667rem;
+  line-height: 2.33333rem;
+}
+/* line 118, ../sass/partials/_home-portfolio.scss */
+.item-content .spec-name {
+  color: #9B9B9B;
+  text-transform: uppercase;
+}
+/* line 124, ../sass/partials/_home-portfolio.scss */
+.item-content .summary {
+  max-width: 650px;
+  font-size: 1.83333rem;
+  line-height: 3.66667rem;
+  color: #4A4A4A;
+}
+/* line 130, ../sass/partials/_home-portfolio.scss */
+.item-content .image-slider {
+  margin: 0;
+  margin-top: 5.5rem;
+  margin-bottom: 5.5rem;
+  padding: 0;
+}
+/* line 137, ../sass/partials/_home-portfolio.scss */
+.item-content .item-launch, .item-content .image-slider {
+  width: 85%;
+  max-width: 85%;
+}
+/* line 142, ../sass/partials/_home-portfolio.scss */
+.item-content .launch-button {
+  width: 36rem;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  letter-spacing: 0px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 5px;
+}
+/* line 156, ../sass/partials/_home-portfolio.scss */
+.item-content .launch-button:before {
+  font-size: 150%;
+}
+
+/* line 167, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+1) .top-divider {
+  background-color: red;
+}
+/* line 171, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+1) .btn {
+  color: red;
+  border: 2px solid red;
+}
+/* line 26, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+1) .btn:hover, .item:nth-child(6n+1) .btn:focus {
+  background-color: red;
+  color: white;
+}
+/* line 30, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+1) .btn:active:before {
+  color: red;
+}
+/* line 12, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+1) .effect:hover, .item:nth-child(6n+1) .effect:focus {
+  color: red;
+}
+/* line 15, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+1) .effect:before {
+  background: red;
+}
+
+/* line 167, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+2) .top-divider {
+  background-color: orange;
+}
+/* line 171, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+2) .btn {
+  color: orange;
+  border: 2px solid orange;
+}
+/* line 26, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+2) .btn:hover, .item:nth-child(6n+2) .btn:focus {
+  background-color: orange;
+  color: white;
+}
+/* line 30, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+2) .btn:active:before {
+  color: orange;
+}
+/* line 12, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+2) .effect:hover, .item:nth-child(6n+2) .effect:focus {
+  color: orange;
+}
+/* line 15, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+2) .effect:before {
+  background: orange;
+}
+
+/* line 167, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+3) .top-divider {
+  background-color: yellow;
+}
+/* line 171, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+3) .btn {
+  color: yellow;
+  border: 2px solid yellow;
+}
+/* line 26, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+3) .btn:hover, .item:nth-child(6n+3) .btn:focus {
+  background-color: yellow;
+  color: white;
+}
+/* line 30, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+3) .btn:active:before {
+  color: yellow;
+}
+/* line 12, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+3) .effect:hover, .item:nth-child(6n+3) .effect:focus {
+  color: yellow;
+}
+/* line 15, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+3) .effect:before {
+  background: yellow;
+}
+
+/* line 167, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+4) .top-divider {
+  background-color: green;
+}
+/* line 171, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+4) .btn {
+  color: green;
+  border: 2px solid green;
+}
+/* line 26, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+4) .btn:hover, .item:nth-child(6n+4) .btn:focus {
+  background-color: green;
+  color: white;
+}
+/* line 30, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+4) .btn:active:before {
+  color: green;
+}
+/* line 12, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+4) .effect:hover, .item:nth-child(6n+4) .effect:focus {
+  color: green;
+}
+/* line 15, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+4) .effect:before {
+  background: green;
+}
+
+/* line 167, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+5) .top-divider {
+  background-color: blue;
+}
+/* line 171, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+5) .btn {
+  color: blue;
+  border: 2px solid blue;
+}
+/* line 26, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+5) .btn:hover, .item:nth-child(6n+5) .btn:focus {
+  background-color: blue;
+  color: white;
+}
+/* line 30, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+5) .btn:active:before {
+  color: blue;
+}
+/* line 12, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+5) .effect:hover, .item:nth-child(6n+5) .effect:focus {
+  color: blue;
+}
+/* line 15, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+5) .effect:before {
+  background: blue;
+}
+
+/* line 167, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+6) .top-divider {
+  background-color: purple;
+}
+/* line 171, ../sass/partials/_home-portfolio.scss */
+.item:nth-child(6n+6) .btn {
+  color: purple;
+  border: 2px solid purple;
+}
+/* line 26, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+6) .btn:hover, .item:nth-child(6n+6) .btn:focus {
+  background-color: purple;
+  color: white;
+}
+/* line 30, ../sass/vendor/_buttonComponent.scss */
+.item:nth-child(6n+6) .btn:active:before {
+  color: purple;
+}
+/* line 12, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+6) .effect:hover, .item:nth-child(6n+6) .effect:focus {
+  color: purple;
+}
+/* line 15, ../sass/vendor/_linkComponent.scss */
+.item:nth-child(6n+6) .effect:before {
+  background: purple;
+}
+
+@media screen and (max-width: 700px) {
+  /* line 184, ../sass/partials/_home-portfolio.scss */
+  .item-side {
+    width: 100%;
+    padding: 0;
+    text-align: left;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  /* line 195, ../sass/partials/_home-portfolio.scss */
+  .item-main {
+    width: 100%;
+  }
+
+  /* line 199, ../sass/partials/_home-portfolio.scss */
+  .portfolio-divider, .item-title, .item-content {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  /* line 206, ../sass/partials/_home-portfolio.scss */
+  .portfolio-divider .item-main {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  /* line 214, ../sass/partials/_home-portfolio.scss */
+  .portfolio-divider .item-main hr {
+    margin-top: 0.5rem;
+  }
+
+  /* line 221, ../sass/partials/_home-portfolio.scss */
+  .item-title .item-main {
+    margin-bottom: 1rem;
+  }
+
+  /* line 227, ../sass/partials/_home-portfolio.scss */
+  .item-content .item-side {
+    margin-bottom: 2rem;
+  }
+  /* line 231, ../sass/partials/_home-portfolio.scss */
+  .item-content .top-divider {
+    margin-left: 0;
+    margin-right: auto;
+    margin-bottom: 1rem;
+  }
+  /* line 237, ../sass/partials/_home-portfolio.scss */
+  .item-content .divider {
+    display: none;
+  }
+  /* line 241, ../sass/partials/_home-portfolio.scss */
+  .item-content .spec {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  /* line 246, ../sass/partials/_home-portfolio.scss */
+  .item-content .spec-name, .item-content a {
+    float: none;
+    line-height: 1.66667rem;
+  }
+  /* line 251, ../sass/partials/_home-portfolio.scss */
+  .item-content .spec-list {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  /* line 259, ../sass/partials/_home-portfolio.scss */
+  .item-content .spec-list a {
+    margin-right: 1rem;
+  }
+  /* line 261, ../sass/partials/_home-portfolio.scss */
+  .item-content .spec-list a:after {
+    content: ",";
+  }
+  /* line 264, ../sass/partials/_home-portfolio.scss */
+  .item-content .spec-list a:last-child:after {
+    content: "";
+  }
+  /* line 270, ../sass/partials/_home-portfolio.scss */
+  .item-content .item-launch, .item-content .image-slider {
+    width: 100%;
+    max-width: 100%;
+  }
+  /* line 275, ../sass/partials/_home-portfolio.scss */
+  .item-content .launch-button {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 281, ../sass/partials/_home-portfolio.scss */
+  .item-content .image-slider {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  /* line 284, ../sass/partials/_home-portfolio.scss */
+  .item-content .image-slider .gallery-arrow {
+    display: none;
+  }
+}
+/**
+ *	Case Study page
+ */
+/* line 5, ../sass/partials/_case.scss */
+#case-study {
+  padding: 0;
+}
+
+/* line 1, ../sass/partials/_case-intro.scss */
+.wrapper {
+  max-width: 101rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 7, ../sass/partials/_case-intro.scss */
+.intro {
+  color: white;
+  background-color: #634180;
+}
+/* line 11, ../sass/partials/_case-intro.scss */
+.intro .wrapper {
+  padding: 6rem;
+  padding-top: 10vw;
+  padding-bottom: 5vw;
+}
+/* line 16, ../sass/partials/_case-intro.scss */
+.intro .name {
+  font-size: 4rem;
+  line-height: 8rem;
+}
+/* line 19, ../sass/partials/_case-intro.scss */
+.intro .title {
+  font-family: Lora, serif;
+  font-size: 1.66667rem;
+  line-height: 3.33333rem;
+}
+/* line 23, ../sass/partials/_case-intro.scss */
+.intro .top-divider {
+  width: 6.5rem;
+  height: 3px;
+  margin: 2rem;
+  margin-left: 0;
+  margin-right: auto;
+  background-color: #9d72cb;
+}
+/* line 31, ../sass/partials/_case-intro.scss */
+.intro .summary {
+  max-width: 600px;
+  margin-bottom: 5rem;
+  font-size: 2.33333rem;
+  line-height: 4.66667rem;
+}
+/* line 36, ../sass/partials/_case-intro.scss */
+.intro .website {
+  font-size: 1.33333rem;
+  line-height: 2.66667rem;
+  color: #9d72cb;
+}

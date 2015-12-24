@@ -1,0 +1,289 @@
+// Left side
+.item-side{
+	//display:block;
+	margin-left: auto;
+	margin-right: $home-left-width/7;
+	text-align: right;
+	@include flexbox((
+ 		display: flex,
+		flex-wrap: nowrap,
+ 		flex-direction: column,
+		justify-content: flex-start,
+		align-content: flex-start
+ 	));
+
+	.number{
+		font-family: Lora, serif;
+		@include type-setting(1);
+		color: $gray;
+	}
+}
+
+// Right side
+.item-main{
+	width: 100vw - $home-left-width - $home-right-padding;			// SUPER SHITTY
+	margin-bottom: spacing(5);
+
+	.name{
+		display: inline-block;
+		@include type-setting(4.5);
+	}
+	.website{
+		display: inline-block;
+		margin-left: spacing(-1);
+		color: $gray;
+	}
+	.title{
+		font-family: Lora, serif;
+		font-size: font-setting(1);
+		line-height: line-setting(0);
+		color: $gray;
+	}
+}
+
+// Elements with side and main content
+.portfolio-divider, .item-title, .item-content{
+	position: relative;
+	@include flexbox((
+ 		display: flex,
+		flex-wrap: nowrap,
+ 		flex-direction: row,
+		justify-content: flex-end,
+		align-content: stretch
+ 	));
+}
+
+// main/case study divider
+.portfolio-divider{
+	margin-bottom: spacing(2);
+	text-transform: uppercase;
+	@include type-setting(1);
+	color: $gray;
+
+	.item-main{
+		@include flexbox((
+ 			display: flex,
+			flex-wrap: nowrap,
+ 			flex-direction: row,
+			justify-content: flex-start
+		));
+
+		p{
+			white-space: nowrap;
+			margin-right: spacing(3);
+		}
+
+		hr{
+			width: 100%;
+			height: 1px;
+			margin-top: 13px;
+			background-color: $gray;
+		}
+	}
+}
+
+// Portfolio item title
+.item-title{
+	@include flexbox((
+		align-items: baseline
+ 	));
+}
+
+// Portfolio item content
+.item-content{
+	// item-side
+	hr{
+		margin: spacing(0);
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	.top-divider{		// colored divider
+		width: spacing(11);
+		height: 4px;
+	}
+
+	.divider{		// gray divider
+		width: spacing(20);
+		height: 1px;
+		background-color: $gray-light;
+	}
+
+	.spec-name, a{
+		float: right;
+		clear: both;
+		@include type-setting(.5);
+	}
+
+	.spec-name{
+		color: $gray;
+		text-transform: uppercase;
+	}
+
+	// item-main
+	.summary{
+		max-width: 650px;
+		@include type-setting(2.5);
+		color: $gray-text;
+	}
+
+	.image-slider{
+		margin: 0;
+		margin-top: spacing(9);
+		margin-bottom: spacing(9);
+		padding: 0;
+	}
+
+	.item-launch, .image-slider{
+		width: 85%;
+		max-width: 85%;
+	}
+
+	.launch-button{
+		width: spacing(70);
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+
+		// .btn
+		letter-spacing: 0px;
+		font-size: 1.2rem;
+		font-weight: 700;
+		// .btn-4
+		border-radius: 5px;
+		// .btn-4:before
+		&:before {
+			font-size: 150%;
+		}
+	}
+}
+
+// Applies color to each portfolio item
+@for $i from 1 through length($color-list) {
+	.item:nth-child(#{length($color-list)}n+#{$i}) {		// In case more items than colors
+		$current-color: nth($color-list, $i);
+
+		.top-divider{
+			background-color: $current-color;
+		}
+
+		.btn{
+			@include button-color($current-color)
+		}
+
+		// link hover effect
+		.effect{
+			@include effect-color($current-color);
+		}
+	}
+}
+
+// Breakpoint
+@media screen and (max-width: $break-large){
+	.item-side{
+		width: 100%;
+		padding: 0;
+		text-align: left;
+		@include flexbox((
+ 			display: flex,
+			flex-wrap: wrap,
+ 			flex-direction: row
+ 		));
+	}
+
+	.item-main{
+		width: 100%;
+	}
+
+	.portfolio-divider, .item-title, .item-content{
+		@include flexbox((
+			flex-wrap: wrap,
+ 		));
+	}
+
+	.portfolio-divider{
+		.item-main{
+			@include flexbox((
+ 				display: flex,
+				flex-wrap: wrap,
+ 				flex-direction: column,
+				justify-content: flex-start
+			));
+
+			hr{
+				margin-top: spacing(-1);
+			}
+		}
+	}
+
+	.item-title{
+		.item-main{
+			margin-bottom: spacing(0);
+		}
+	}
+
+	.item-content{
+		.item-side{
+			margin-bottom: spacing(2);
+		}
+
+		.top-divider{
+			margin-left: 0;
+			margin-right: auto;
+			margin-bottom: spacing(0);
+		}
+
+		.divider{
+			display: none;
+		}
+
+		.spec{
+			width: 100%;
+			margin-bottom: spacing(0);
+		}
+
+		.spec-name, a{
+			float: none;
+			line-height: line-setting(-.5);
+		}
+
+		.spec-list{
+			@include flexbox((
+ 				display: flex,
+				flex-wrap: wrap,
+ 				flex-direction: row,
+				justify-content: flex-start
+ 			));
+
+			a{
+				margin-right: spacing(0);
+				&:after {
+					content: ",";
+				}
+				&:last-child:after{
+					content: "";
+				}
+			}
+		}
+
+		.item-launch,.image-slider{
+			width: 100%;
+			max-width: 100%;
+		}
+
+		.launch-button{
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.image-slider{		// slider remove arrows
+			margin-top: spacing(6);
+			margin-bottom: spacing(6);
+			.gallery-arrow{
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,115 @@
+.splash{
+	width: 100%;
+	height: 100%;
+
+	padding-top: $home-left-width*.7;
+	padding-left: $home-left-width;
+	padding-bottom: $home-left-width/2;
+
+	hr{
+		margin: 0;
+		margin-right: auto;
+		margin-bottom: spacing(0);
+		width: spacing(17);
+		height: 4px;
+		background-color: $home-highlight;
+	}
+
+	.icons{
+		width: 15px;
+		height: 15px;
+		vertical-align: middle;
+	}
+
+	// Link hover effect
+	// line height fix
+	.effect{
+		@include effect-color($home-highlight);
+		padding: 10px 0;
+		&:before{
+			bottom: 15%;
+		}
+	}
+}
+
+.splash-title{
+	margin-bottom: spacing(8);
+	@include flexbox((
+  	display: flex,
+		flex-wrap: wrap,
+  	flex-direction: row,
+		justify-content: space-between,
+		align-content: flex-start
+  ));
+
+	.logo{
+		width: 100%;
+		@include type-setting(7);
+		font-weight: 700;
+	}
+
+	.contact{
+		width: 100%;
+		@include type-setting(1.5);
+		line-height: line-setting(1);
+
+		span{
+			margin-left: spacing(0);
+			margin-right: spacing(0);
+		}
+
+		a{
+			color: $gray;
+		}
+	}
+}
+
+.splash-intro{
+	@include flexbox((
+  	display: flex,
+		flex-wrap: wrap,
+  	flex-direction: row,
+		justify-content: flex-start,
+		align-content: flex-start
+  ));
+
+	.current{
+		width: 100%;
+		@include type-setting(0);
+		line-height: line-setting(1);
+	}
+
+	.links{
+		width: 100%;
+		@include type-setting(1);
+		@include flexbox((
+  		display: flex,
+  		flex-direction: row,
+			flex-wrap: wrap,
+			justify-content: flex-start,
+			align-content: flex-start
+  	));
+
+		.link{
+			margin-right: spacing(0);
+		}
+
+		a{
+			color: $gray;
+		}
+	}
+}
+
+@media screen and (max-width: $break-large){
+	.splash{
+		padding: 0;
+		padding-bottom: $home-left-width/2;
+	}
+	.links{
+		margin-bottom: spacing(0);
+	}
+	.link{
+		width: 100%;
+	}
+}
+

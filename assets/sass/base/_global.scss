@@ -1,0 +1,40 @@
+/**
+ *	Globals
+ */
+
+*{
+	box-sizing: border-box;
+}
+
+html,body{
+  margin: 0;
+  padding: 0;
+
+	color: $black;
+	font-size: 62.5%;
+	font-family: Karla, Helvetica;
+}
+
+h1, h2, h3, h4, h5, h6{
+	margin: 0;
+	font-weight: 400;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+hr{
+	border: none;
+}
+
+a{
+	text-decoration: none;
+	color: $black;
+}
+
+p{
+	margin: 0;
+}

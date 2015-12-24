@@ -1,0 +1,91 @@
+//
+//
+//	_tabSlider.scss
+//
+//
+
+@import 'compass/css3';
+
+$tab-break-small: 320px;
+
+.tab-slider{
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+
+.tab-nav{
+	width: 100%;
+	height: 100%;
+
+	margin-top: 20px;					// Change Nav spacing here
+	margin-bottom: 20px;
+	padding-left: 6vw;
+	padding-right: 6vw;
+
+	box-sizing: border-box;
+	border-bottom: 1px solid black;
+
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		@include flexbox((
+  	  display: flex,
+			flex-wrap: wrap,
+  	  flex-direction: row,
+			justify-content: center,
+			align-items: stretch
+  	));
+
+		@media screen and (max-width: $tab-break-small) {
+			@include flexbox((
+  	 	 	display: flex,
+				flex-wrap: wrap,
+  	 	 	flex-direction: column,
+				justify-content: center,
+				align-items: stretch
+  		));
+  	}
+	}
+}
+
+.nav-title{
+	width: 100%;
+	margin-left: 2%;
+	margin-right: 2%;
+	text-align: center;
+	flex: 1;
+
+	border-bottom: 5px solid white;
+
+	&.selected{
+		border-bottom: 5px solid black;
+	}
+
+	a{
+		height: 100%;
+		margin: 0;
+		text-decoration: none;
+		word-wrap: break-word;
+		color: black;
+		font-size: 20px;
+	}
+}
+
+.tab-content{
+  overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+.content-page{
+	float: left;
+	height: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
