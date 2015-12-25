@@ -582,7 +582,7 @@ p {
 }
 /* line 15, ../sass/partials/_home-portfolio.scss */
 .item-side .number {
-  font-family: Lora, serif;
+  font-family: Vollkorn, Lora, serif;
   font-size: 1.33333rem;
   line-height: 2.66667rem;
   color: #9B9B9B;
@@ -607,7 +607,7 @@ p {
 }
 /* line 36, ../sass/partials/_home-portfolio.scss */
 .item-main .title {
-  font-family: Lora, serif;
+  font-family: Vollkorn, Lora, serif;
   font-size: 1.33333rem;
   line-height: 2rem;
   color: #9B9B9B;
@@ -732,165 +732,138 @@ p {
 }
 
 /* line 167, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+1) .top-divider {
-  background-color: red;
+.item:nth-child(5n+1) .top-divider {
+  background-color: #634180;
 }
 /* line 171, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+1) .btn {
-  color: red;
-  border: 2px solid red;
+.item:nth-child(5n+1) .btn {
+  color: #634180;
+  border: 2px solid #634180;
 }
 /* line 26, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+1) .btn:hover, .item:nth-child(6n+1) .btn:focus {
-  background-color: red;
+.item:nth-child(5n+1) .btn:hover, .item:nth-child(5n+1) .btn:focus {
+  background-color: #634180;
   color: white;
 }
 /* line 30, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+1) .btn:active:before {
-  color: red;
+.item:nth-child(5n+1) .btn:active:before {
+  color: #634180;
 }
 /* line 12, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+1) .effect:hover, .item:nth-child(6n+1) .effect:focus {
-  color: red;
+.item:nth-child(5n+1) .effect:hover, .item:nth-child(5n+1) .effect:focus {
+  color: #634180;
 }
 /* line 15, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+1) .effect:before {
-  background: red;
+.item:nth-child(5n+1) .effect:before {
+  background: #634180;
 }
 
 /* line 167, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+2) .top-divider {
-  background-color: orange;
+.item:nth-child(5n+2) .top-divider {
+  background-color: #6596B2;
 }
 /* line 171, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+2) .btn {
-  color: orange;
-  border: 2px solid orange;
+.item:nth-child(5n+2) .btn {
+  color: #6596B2;
+  border: 2px solid #6596B2;
 }
 /* line 26, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+2) .btn:hover, .item:nth-child(6n+2) .btn:focus {
-  background-color: orange;
+.item:nth-child(5n+2) .btn:hover, .item:nth-child(5n+2) .btn:focus {
+  background-color: #6596B2;
   color: white;
 }
 /* line 30, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+2) .btn:active:before {
-  color: orange;
+.item:nth-child(5n+2) .btn:active:before {
+  color: #6596B2;
 }
 /* line 12, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+2) .effect:hover, .item:nth-child(6n+2) .effect:focus {
-  color: orange;
+.item:nth-child(5n+2) .effect:hover, .item:nth-child(5n+2) .effect:focus {
+  color: #6596B2;
 }
 /* line 15, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+2) .effect:before {
-  background: orange;
+.item:nth-child(5n+2) .effect:before {
+  background: #6596B2;
 }
 
 /* line 167, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+3) .top-divider {
-  background-color: yellow;
+.item:nth-child(5n+3) .top-divider {
+  background-color: #C9C15D;
 }
 /* line 171, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+3) .btn {
-  color: yellow;
-  border: 2px solid yellow;
+.item:nth-child(5n+3) .btn {
+  color: #C9C15D;
+  border: 2px solid #C9C15D;
 }
 /* line 26, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+3) .btn:hover, .item:nth-child(6n+3) .btn:focus {
-  background-color: yellow;
+.item:nth-child(5n+3) .btn:hover, .item:nth-child(5n+3) .btn:focus {
+  background-color: #C9C15D;
   color: white;
 }
 /* line 30, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+3) .btn:active:before {
-  color: yellow;
+.item:nth-child(5n+3) .btn:active:before {
+  color: #C9C15D;
 }
 /* line 12, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+3) .effect:hover, .item:nth-child(6n+3) .effect:focus {
-  color: yellow;
+.item:nth-child(5n+3) .effect:hover, .item:nth-child(5n+3) .effect:focus {
+  color: #C9C15D;
 }
 /* line 15, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+3) .effect:before {
-  background: yellow;
+.item:nth-child(5n+3) .effect:before {
+  background: #C9C15D;
 }
 
 /* line 167, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+4) .top-divider {
-  background-color: green;
+.item:nth-child(5n+4) .top-divider {
+  background-color: #CA135A;
 }
 /* line 171, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+4) .btn {
-  color: green;
-  border: 2px solid green;
+.item:nth-child(5n+4) .btn {
+  color: #CA135A;
+  border: 2px solid #CA135A;
 }
 /* line 26, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+4) .btn:hover, .item:nth-child(6n+4) .btn:focus {
-  background-color: green;
+.item:nth-child(5n+4) .btn:hover, .item:nth-child(5n+4) .btn:focus {
+  background-color: #CA135A;
   color: white;
 }
 /* line 30, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+4) .btn:active:before {
-  color: green;
+.item:nth-child(5n+4) .btn:active:before {
+  color: #CA135A;
 }
 /* line 12, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+4) .effect:hover, .item:nth-child(6n+4) .effect:focus {
-  color: green;
+.item:nth-child(5n+4) .effect:hover, .item:nth-child(5n+4) .effect:focus {
+  color: #CA135A;
 }
 /* line 15, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+4) .effect:before {
-  background: green;
+.item:nth-child(5n+4) .effect:before {
+  background: #CA135A;
 }
 
 /* line 167, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+5) .top-divider {
-  background-color: blue;
+.item:nth-child(5n+5) .top-divider {
+  background-color: #25485C;
 }
 /* line 171, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+5) .btn {
-  color: blue;
-  border: 2px solid blue;
+.item:nth-child(5n+5) .btn {
+  color: #25485C;
+  border: 2px solid #25485C;
 }
 /* line 26, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+5) .btn:hover, .item:nth-child(6n+5) .btn:focus {
-  background-color: blue;
+.item:nth-child(5n+5) .btn:hover, .item:nth-child(5n+5) .btn:focus {
+  background-color: #25485C;
   color: white;
 }
 /* line 30, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+5) .btn:active:before {
-  color: blue;
+.item:nth-child(5n+5) .btn:active:before {
+  color: #25485C;
 }
 /* line 12, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+5) .effect:hover, .item:nth-child(6n+5) .effect:focus {
-  color: blue;
+.item:nth-child(5n+5) .effect:hover, .item:nth-child(5n+5) .effect:focus {
+  color: #25485C;
 }
 /* line 15, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+5) .effect:before {
-  background: blue;
-}
-
-/* line 167, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+6) .top-divider {
-  background-color: purple;
-}
-/* line 171, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(6n+6) .btn {
-  color: purple;
-  border: 2px solid purple;
-}
-/* line 26, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+6) .btn:hover, .item:nth-child(6n+6) .btn:focus {
-  background-color: purple;
-  color: white;
-}
-/* line 30, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(6n+6) .btn:active:before {
-  color: purple;
-}
-/* line 12, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+6) .effect:hover, .item:nth-child(6n+6) .effect:focus {
-  color: purple;
-}
-/* line 15, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(6n+6) .effect:before {
-  background: purple;
+.item:nth-child(5n+5) .effect:before {
+  background: #25485C;
 }
 
 @media screen and (max-width: 700px) {
@@ -1040,8 +1013,8 @@ p {
 }
 /* line 19, ../sass/partials/_case-intro.scss */
 .intro .title {
-  font-family: Lora, serif;
-  font-size: 1.66667rem;
+  font-family: Vollkorn, Lora, serif;
+  font-size: 1.9rem;
   line-height: 3.33333rem;
 }
 /* line 23, ../sass/partials/_case-intro.scss */

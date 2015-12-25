@@ -13,7 +13,7 @@
  	));
 
 	.number{
-		font-family: Lora, serif;
+		font-family: Vollkorn, Lora, serif;
 		@include type-setting(1);
 		color: $gray;
 	}
@@ -34,7 +34,7 @@
 		color: $gray;
 	}
 	.title{
-		font-family: Lora, serif;
+		font-family: Vollkorn, Lora, serif;
 		font-size: font-setting(1);
 		line-height: line-setting(0);
 		color: $gray;
