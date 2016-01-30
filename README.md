@@ -8,8 +8,9 @@ Use this command at the root directory to start compiling CSS
 compass watch
 ```
 
-## Guide
-The sass directory is organized into three main folders:
-* base - Default styles, sass variables, and helper functions/mixins
+## Styling
+The sass directory is organized into four main folders:
+* base - Global defaults, sass variables, and helper mixins
+*	components - Reusable classes for default text, layout, and helper styles
 * partials - Majority of the website's CSS, organized by page and page sections
-* vendor - Other third party code 
+* vendor - Other third party CSS
