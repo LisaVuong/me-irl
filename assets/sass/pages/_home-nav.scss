@@ -11,7 +11,7 @@
 
 	position: fixed;
 	right: spacing(5);
-	top: 50%;
+	top: 50vh;
 	@include transform(translateY(-50%));
 
 	font-family: Lora, serif;

@@ -5,9 +5,10 @@
  *
  *	http://tympanus.net/Development/CreativeLinkEffects/
  *
- *	Three versions, link-effect, link-effect-a and link-effect-b
- *	Used to specify preference for :before or :after
- *	link-effect has no preference, uses :before by default
+ *	Usage
+ *	.link-effect - general class
+ *	.link-after - uses :after psuedo element for effect
+ *	.link-before - uses :before psuedo element for effect
  *
  */
 
@@ -29,16 +30,6 @@
 			background: $color;
 		}
 	}
-
-	/*/.link-effect-a:after{
-	&:after,
-	&:before{
-		background: $color;
-	//}
-	//.link-effect,
-	//.link-effect-b:before{
-		background: $color;
-	}*/
 }
 
 /* Effect 17: move up fade out, push border */
