@@ -1,0 +1,103 @@
+/**
+ *
+ *	Case study main content
+ *
+ */
+
+// Slider
+.tab-nav a{
+	@include type-setting(1.5);
+	font-weight: 700;
+}
+
+.nav-wrapper{
+	margin-top: spacing(1);
+	margin-bottom: spacing(1);
+}
+
+// Slider Pages
+.page-section{
+	padding: $case-base-padding;
+	padding-top: $case-base-padding*1.5;
+	padding-bottom: $case-base-padding*1.5;
+	@include flexbox((
+ 		display: flex,
+		flex-wrap: wrap,
+ 		flex-direction: row,
+		justify-content: center,
+		align-items: center,
+		align-content: flex-start
+ 	));
+}
+
+// Side element, usually used with spec content
+.side{
+	position: absolute;
+	right: 15vw;
+
+	.top-divider,
+	.divider,
+	.spec-title,
+	.spec-list,
+	.spec-item{
+		float: left;
+		clear: both;
+	}
+
+	.spec-title{
+		@include type-setting(1.5);
+		line-height: line-setting(1);
+	}
+
+	.spec-list{
+		@include type-setting(2);
+		line-height: line-setting(1);
+		margin-bottom: spacing(-1);
+	}
+
+	.top-divider{
+		margin-bottom: spacing(-1);
+	}
+}
+
+@media screen and (max-width: $bp-xlarge){
+	.side{
+		width: 100%;
+		margin-bottom: spacing(0);
+		position: relative;
+		right: 0;
+
+		.top-divider{
+			margin-bottom: spacing(3);
+		}
+
+		.divider{
+			display: none;
+		}
+
+		.spec-title,
+		.spec-list,
+		.spec-item{
+			float: none;
+		}
+
+		.spec-list{
+			@include flexbox((
+				display: flex,
+				flex-wrap: wrap,
+				flex-direction: row,
+				justify-content: flex-start
+			));
+		}
+
+		.spec-item{
+			margin-right: spacing(0);
+			&:after {
+				content: ",";
+			}
+			&:last-child:after{
+				content: "";
+			}
+		}
+	}
+}

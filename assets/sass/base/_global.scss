@@ -9,7 +9,6 @@
 html,body{
   margin: 0;
   padding: 0;
-
 	color: $black;
 	font-size: 62.5%;
 	font-family: Karla, Helvetica;
@@ -26,6 +25,10 @@ ul{
 	padding: 0;
 }
 
+li{
+	list-style: none;
+}
+
 hr{
 	border: none;
 }
@@ -33,6 +36,7 @@ hr{
 a{
 	text-decoration: none;
 	color: $black;
+	cursor: pointer;
 }
 
 p{

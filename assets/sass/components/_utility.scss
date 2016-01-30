@@ -1,0 +1,48 @@
+/**
+ *
+ *	Other helper & utility classes
+ *
+ */
+
+// Sets background to case study primary color
+.bg-primary{
+	// Depends on case study
+	// background: $case-primary
+	color: white;
+}
+
+// Sets background to gray
+.bg-gray{
+	background-color: $case-gray;
+}
+
+// Sets background to img tag
+.bg-image{
+	width: 100%;
+	position: relative;
+	.img-bg{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+// Styles img into a circle
+.img-circle{
+	width: 120px;
+	height: 120px;
+	margin-bottom: spacing(1);
+	border-radius: 100%;
+}
+
+.font-primary{
+	font-family: Karla;
+}
+
+.font-secondary{
+	font-family: Lora;
+}

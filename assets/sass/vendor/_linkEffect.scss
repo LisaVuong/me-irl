@@ -1,0 +1,88 @@
+/**
+ *
+ *	Modified from
+ *	Creative Link Styles by Tympanus.net
+ *
+ *	http://tympanus.net/Development/CreativeLinkEffects/
+ *
+ *	Three versions, link-effect, link-effect-a and link-effect-b
+ *	Used to specify preference for :before or :after
+ *	link-effect has no preference, uses :before by default
+ *
+ */
+
+// Helper mixin for setting button effect color
+@mixin link-color($color) {
+	&:hover,
+	&:focus{
+		color: $color;
+	}
+
+	&.link-before{
+		&:before{
+			background: $color;
+		}
+	}
+
+	&.link-after{
+		&:after{
+			background: $color;
+		}
+	}
+
+	/*/.link-effect-a:after{
+	&:after,
+	&:before{
+		background: $color;
+	//}
+	//.link-effect,
+	//.link-effect-b:before{
+		background: $color;
+	}*/
+}
+
+/* Effect 17: move up fade out, push border */
+.link-effect{
+	text-shadow: none;
+	position:relative;
+}
+
+.link-after::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	opacity: 0;
+	@include transform(translateY(5px));
+	@include transition(opacity, 0.3s);
+	pointer-events: none;
+}
+
+.link-after:hover::after,
+.link-after:focus::after {
+	opacity: 1;
+	@include transform(translateY(0px));
+}
+
+.link-before::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	opacity: 0;
+	@include transform(translateY(5px));
+	@include transition(opacity, 0.3s);
+	pointer-events: none;
+}
+
+.link-before:hover::before,
+.link-before:focus::before {
+	opacity: 1;
+	@include transform(translateY(0px));
+}

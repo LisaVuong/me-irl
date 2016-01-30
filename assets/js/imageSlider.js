@@ -8,7 +8,7 @@ var ImageSlider = function () {
 	var config = {
 		spacing			: [0], 			// List of nav list indexes
 		labels			: ['',''], 	// List of nav list names
-		slideSpeed	: 400,			// Slide transition duration
+		slideSpeed	: 500,			// Slide transition duration
 		loopSpeed		: 5000			// Loop duration
 	};
 
@@ -65,11 +65,11 @@ var ImageSlider = function () {
 		var holder = images[0].parentElement; // Parent div of images
 		var position = -(100 / numImages) * newIndex + '%';
 
-		// With JQuery
-		//$.Velocity.animate(holder, {translateX: position}, config.slideSpeed);
-
-		// Without JQuery
-		Velocity(holder, {translateX: position}, config.slideSpeed);
+		if(window.jQuery){
+			$.Velocity.animate(holder, {translateX: position}, config.slideSpeed);
+		} else {
+			Velocity(holder, {translateX: position}, config.slideSpeed);
+		}
 	};
 
 	/**
@@ -262,6 +262,17 @@ var ImageSlider = function () {
 		var nav = createNav(); // Create nav element
 		slider.appendChild(gallery);
 		slider.appendChild(nav);
+
+		// Swipe on screens
+		if(Hammer){
+			var mc = new Hammer(slider);
+			mc.on('swipeleft', function(ev) {
+				nextSlide();
+			});
+			mc.on('swiperight', function(ev) {
+				prevSlide();
+			});
+		}
 
 		update(0); // Selects the first image
 	};

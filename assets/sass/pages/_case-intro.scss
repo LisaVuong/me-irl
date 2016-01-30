@@ -1,0 +1,46 @@
+/**
+ *
+ *	Case study intro section
+ *
+ */
+
+.intro{
+	padding: $case-base-padding;
+	color: white;
+
+	.wrapper{
+		padding-top: $case-base-padding;
+		padding-bottom: $case-base-padding;
+	}
+	.title{
+		font-family: Karla, sans-serif;
+		font-weight: 400;
+		@include type-setting(9);
+		line-height: line-setting(6);
+	}
+	.desc{
+		@include type-setting(1.5);
+	}
+	.top-divider{
+		height: 3px;
+		margin: spacing(2);
+		margin-left: 0;
+		margin-right: auto;
+	}
+	.body{
+		max-width: 600px;
+		font-family: Karla, sans-serif;
+	}
+	.website{
+		@include type-setting(1);
+	}
+}
+
+// Alignment
+.wrapper,
+.nav-wrapper,
+.select-wrapper{
+	max-width: $case-align-width;
+	margin-left: auto;
+	margin-right: auto;
+}

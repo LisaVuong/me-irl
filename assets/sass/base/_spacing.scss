@@ -1,0 +1,21 @@
+/**
+ *
+ *	Standardized spacing
+ *
+ */
+
+// base spacing settings
+$base-spacing: 1rem;
+
+@function spacing($level) {
+  @return (((0.5 * $level) + 1) * $base-spacing);
+}
+
+// Layout variables for home page
+$home-left-width: 22vw;
+$home-right-padding: 13vw;
+
+// Layout variables for case study
+$case-intro-padding: 5vw;
+$case-base-padding: spacing(6);
+$case-align-width: spacing(180);

@@ -25,31 +25,37 @@ html, body {
   font-family: Karla, Helvetica;
 }
 
-/* line 18, ../sass/base/_global.scss */
+/* line 17, ../sass/base/_global.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: 400;
 }
 
-/* line 23, ../sass/base/_global.scss */
+/* line 22, ../sass/base/_global.scss */
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 29, ../sass/base/_global.scss */
+/* line 28, ../sass/base/_global.scss */
+li {
+  list-style: none;
+}
+
+/* line 32, ../sass/base/_global.scss */
 hr {
   border: none;
 }
 
-/* line 33, ../sass/base/_global.scss */
+/* line 36, ../sass/base/_global.scss */
 a {
   text-decoration: none;
   color: #262626;
+  cursor: pointer;
 }
 
-/* line 38, ../sass/base/_global.scss */
+/* line 42, ../sass/base/_global.scss */
 p {
   margin: 0;
 }
@@ -224,26 +230,181 @@ p {
 .nav-dot.select {
   background-color: #606060;
 }
-/* line 174, ../sass/vendor/_imageSlider.scss */
+/* line 172, ../sass/vendor/_imageSlider.scss */
 .nav-dot:hover {
   background-color: #606060;
 }
 
 @media screen and (max-width: 700px) {
-  /* line 182, ../sass/vendor/_imageSlider.scss */
+  /* line 178, ../sass/vendor/_imageSlider.scss */
   .nav-spacing {
     height: 12px;
   }
 
-  /* line 185, ../sass/vendor/_imageSlider.scss */
+  /* line 181, ../sass/vendor/_imageSlider.scss */
   .nav-dot {
     width: 9px;
     height: 9px;
   }
 
-  /* line 189, ../sass/vendor/_imageSlider.scss */
+  /* line 185, ../sass/vendor/_imageSlider.scss */
   .nav-label {
     font-size: 9px;
+  }
+}
+/*
+	Slider markup reference for styling
+
+	<div class="tab-slider">
+		<nav class="tab-nav">
+			<ul class="nav-wrapper">
+				<li class="nav-title"><a href="#">Tab 1</a></li>
+				<li class="nav-title"><a href="#">Tab 2</a></li>
+				<li class="nav-title"><a href="#">Tab 3</a></li>
+				<li class="nav-title"><a href="#">Tab 4</a></li>
+			</ul>
+			<div class="select-wrapper">
+ 					<div class="select-bar"></div>
+			</div>
+		</nav>
+		<section class="tab-content">
+			<ul class="content-wrapper">
+				<li class="content-page">
+					Content 1
+				</li>
+				<li class="content-page">
+					Content 2
+				</li>
+				<li class="content-page">
+					Content 3
+				</li>
+				<li class="content-page">
+					Content 4
+				</li>
+			</ul>
+		</section>
+	</div>
+*/
+/* line 77, ../sass/vendor/_tabSlider.scss */
+.tab-slider {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 87, ../sass/vendor/_tabSlider.scss */
+.tab-nav {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  border-bottom: 1px solid grey;
+  color: grey;
+}
+
+/* line 96, ../sass/vendor/_tabSlider.scss */
+.nav-wrapper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-content: center;
+  -webkit-align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: stretch;
+}
+
+/* line 111, ../sass/vendor/_tabSlider.scss */
+.nav-title {
+  margin-left: 2%;
+  margin-right: 2%;
+  text-align: center;
+  flex: 1;
+  list-style: none;
+}
+/* line 118, ../sass/vendor/_tabSlider.scss */
+.nav-title a {
+  height: 100%;
+  margin: 0;
+  text-decoration: none;
+  word-wrap: break-word;
+  font-size: 20px;
+  color: grey;
+  -moz-transition: color, 0.5s;
+  -o-transition: color, 0.5s;
+  -webkit-transition: color, 0.5s;
+  transition: color, 0.5s;
+}
+/* line 129, ../sass/vendor/_tabSlider.scss */
+.nav-title.selected a {
+  color: black;
+}
+
+/* line 135, ../sass/vendor/_tabSlider.scss */
+.select-wrapper {
+  display: block;
+  position: relative;
+}
+
+/* line 140, ../sass/vendor/_tabSlider.scss */
+.select-bar {
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+}
+
+/* line 147, ../sass/vendor/_tabSlider.scss */
+.tab-content {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 152, ../sass/vendor/_tabSlider.scss */
+.content-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 157, ../sass/vendor/_tabSlider.scss */
+.content-page {
+  box-sizing: border-box;
+  list-style: none;
+  display: none;
+  position: relative;
+  visibility: visible;
+}
+/* line 165, ../sass/vendor/_tabSlider.scss */
+.content-page.hide {
+  position: absolute;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  /* line 172, ../sass/vendor/_tabSlider.scss */
+  .nav-wrapper {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  /* line 177, ../sass/vendor/_tabSlider.scss */
+  .select-wrapper {
+    display: none;
+  }
+
+  /* line 180, ../sass/vendor/_tabSlider.scss */
+  .nav-title {
+    border-bottom: 6px solid transparent;
+  }
+  /* line 182, ../sass/vendor/_tabSlider.scss */
+  .nav-title.selected {
+    border-bottom: 6px solid black;
   }
 }
 /**
@@ -262,8 +423,8 @@ p {
   font-style: normal;
 }
 /* General button style (reset) */
-/* line 36, ../sass/vendor/_buttonComponent.scss */
-.btn {
+/* line 36, ../sass/vendor/_buttonEffect.scss */
+.btn-effect {
   border: none;
   font-family: inherit;
   font-size: inherit;
@@ -281,10 +442,14 @@ p {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+  border-radius: 50px;
+  border: 3px solid #fff;
+  color: #fff;
+  overflow: hidden;
 }
 
-/* line 56, ../sass/vendor/_buttonComponent.scss */
-.btn:after {
+/* line 61, ../sass/vendor/_buttonEffect.scss */
+.btn-effect:after {
   content: '';
   position: absolute;
   z-index: -1;
@@ -294,8 +459,8 @@ p {
 }
 
 /* Pseudo elements for icons */
-/* line 66, ../sass/vendor/_buttonComponent.scss */
-.btn:before {
+/* line 71, ../sass/vendor/_buttonEffect.scss */
+.btn-effect:before {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -305,35 +470,6 @@ p {
   line-height: 1;
   position: relative;
   -webkit-font-smoothing: antialiased;
-}
-
-/* line 78, ../sass/vendor/_buttonComponent.scss */
-.icon-arrow-right:before {
-  content: "\e00d";
-}
-
-/* Button 4 */
-/* line 83, ../sass/vendor/_buttonComponent.scss */
-.btn-4 {
-  border-radius: 50px;
-  border: 3px solid #fff;
-  color: #fff;
-  overflow: hidden;
-}
-
-/* line 90, ../sass/vendor/_buttonComponent.scss */
-.btn-4:active {
-  border-color: #17954c;
-  color: #17954c;
-}
-
-/* line 95, ../sass/vendor/_buttonComponent.scss */
-.btn-4:hover {
-  background: #24b662;
-}
-
-/* line 99, ../sass/vendor/_buttonComponent.scss */
-.btn-4:before {
   position: absolute;
   height: 100%;
   font-size: 125%;
@@ -342,23 +478,30 @@ p {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-/* line 110, ../sass/vendor/_buttonComponent.scss */
-.btn-4:active:before {
-  color: #17954c;
-}
-
-/* Button 4c */
-/* line 115, ../sass/vendor/_buttonComponent.scss */
-.btn-4c:before {
   left: 70%;
   opacity: 0;
   top: 0;
+  content: "\e00d";
 }
 
-/* line 121, ../sass/vendor/_buttonComponent.scss */
-.btn-4c:hover:before {
+/* line 98, ../sass/vendor/_buttonEffect.scss */
+.btn-effect:active {
+  border-color: #17954c;
+  color: #17954c;
+}
+
+/* line 103, ../sass/vendor/_buttonEffect.scss */
+.btn-effect:active:before {
+  color: #17954c;
+}
+
+/* line 107, ../sass/vendor/_buttonEffect.scss */
+.btn-effect:hover {
+  background: #24b662;
+}
+
+/* line 111, ../sass/vendor/_buttonEffect.scss */
+.btn-effect:hover:before {
   left: 80%;
   opacity: 1;
 }
@@ -370,16 +513,20 @@ p {
  *
  *	http://tympanus.net/Development/CreativeLinkEffects/
  *
-*/
+ *	Three versions, link-effect, link-effect-a and link-effect-b
+ *	Used to specify preference for :before or :after
+ *	link-effect has no preference, uses :before by default
+ *
+ */
 /* Effect 17: move up fade out, push border */
-/* line 21, ../sass/vendor/_linkComponent.scss */
-.effect {
+/* line 45, ../sass/vendor/_linkEffect.scss */
+.link-effect {
   text-shadow: none;
   position: relative;
 }
 
-/* line 26, ../sass/vendor/_linkComponent.scss */
-.effect::before {
+/* line 50, ../sass/vendor/_linkEffect.scss */
+.link-after::after {
   content: '';
   position: absolute;
   left: 0;
@@ -399,9 +546,40 @@ p {
   pointer-events: none;
 }
 
-/* line 40, ../sass/vendor/_linkComponent.scss */
-.effect:hover::before,
-.effect:focus::before {
+/* line 64, ../sass/vendor/_linkEffect.scss */
+.link-after:hover::after,
+.link-after:focus::after {
+  opacity: 1;
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+/* line 70, ../sass/vendor/_linkEffect.scss */
+.link-before::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  opacity: 0;
+  -moz-transform: translateY(5px);
+  -ms-transform: translateY(5px);
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  -moz-transition: opacity, 0.3s;
+  -o-transition: opacity, 0.3s;
+  -webkit-transition: opacity, 0.3s;
+  transition: opacity, 0.3s;
+  pointer-events: none;
+}
+
+/* line 84, ../sass/vendor/_linkEffect.scss */
+.link-before:hover::before,
+.link-before:focus::before {
   opacity: 1;
   -moz-transform: translateY(0px);
   -ms-transform: translateY(0px);
@@ -410,21 +588,90 @@ p {
 }
 
 /**
+ *
  *	Homepage
+ *
  */
-/* line 5, ../sass/partials/_home.scss */
+/* line 7, ../sass/pages/_home.scss */
 #home {
+  font-family: Karla;
   padding-right: 13vw;
   padding-bottom: 13vw;
 }
 
 @media screen and (max-width: 700px) {
-  /* line 11, ../sass/partials/_home.scss */
+  /* line 14, ../sass/pages/_home.scss */
   #home {
     padding: 8vw;
+    padding-right: 12vw;
   }
 }
-/* line 1, ../sass/partials/_home-splash.scss */
+/**
+ *	Homepage navbar
+ */
+/* line 5, ../sass/pages/_home-nav.scss */
+#nav {
+  display: -webkit-flex;
+  -webkit-flex-wrap: nowrap;
+  -webkit-flex-direction: column;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  position: fixed;
+  right: 3.5rem;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: Lora, serif;
+  font-size: 1.33333rem;
+  line-height: 2.66667rem;
+  text-align: center;
+}
+/* line 21, ../sass/pages/_home-nav.scss */
+#nav .divider {
+  width: 3rem;
+}
+/* line 25, ../sass/pages/_home-nav.scss */
+#nav .link-effect::after {
+  width: 50%;
+  left: 25%;
+  bottom: 10%;
+}
+
+/* line 32, ../sass/pages/_home-nav.scss */
+.nav-link {
+  width: 100%;
+  position: relative;
+}
+/* line 36, ../sass/pages/_home-nav.scss */
+.nav-link:hover {
+  font-weight: 700;
+}
+/* line 40, ../sass/pages/_home-nav.scss */
+.nav-link:hover::before {
+  position: absolute;
+  left: -210px;
+  width: 200px;
+  text-align: right;
+  content: attr(data-name);
+  font-style: italic;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 550px) {
+  /* line 52, ../sass/pages/_home-nav.scss */
+  #nav {
+    right: 4vw;
+  }
+}
+/**
+ *
+ *	Homepage splash section
+ *
+ */
+/* line 7, ../sass/pages/_home-splash.scss */
 .splash {
   width: 100%;
   height: 100%;
@@ -432,7 +679,7 @@ p {
   padding-left: 22vw;
   padding-bottom: 11vw;
 }
-/* line 9, ../sass/partials/_home-splash.scss */
+/* line 15, ../sass/pages/_home-splash.scss */
 .splash hr {
   margin: 0;
   margin-right: auto;
@@ -441,30 +688,43 @@ p {
   height: 4px;
   background-color: #50e3c2;
 }
-/* line 18, ../sass/partials/_home-splash.scss */
+/* line 24, ../sass/pages/_home-splash.scss */
 .splash .icons {
   width: 15px;
   height: 15px;
   vertical-align: middle;
 }
-/* line 26, ../sass/partials/_home-splash.scss */
-.splash .effect {
+/* line 32, ../sass/pages/_home-splash.scss */
+.splash .link-effect {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
   padding: 10px 0;
 }
-/* line 12, ../sass/vendor/_linkComponent.scss */
-.splash .effect:hover, .splash .effect:focus {
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.splash .link-effect:hover, .splash .link-effect:focus {
   color: #50e3c2;
 }
-/* line 15, ../sass/vendor/_linkComponent.scss */
-.splash .effect:before {
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.splash .link-effect.link-before:before {
   background: #50e3c2;
 }
-/* line 29, ../sass/partials/_home-splash.scss */
-.splash .effect:before {
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.splash .link-effect.link-after:after {
+  background: #50e3c2;
+}
+/* line 35, ../sass/pages/_home-splash.scss */
+.splash .link-effect:before {
   bottom: 15%;
 }
 
-/* line 35, ../sass/partials/_home-splash.scss */
+/* line 41, ../sass/pages/_home-splash.scss */
 .splash-title {
   margin-bottom: 5rem;
   display: -webkit-flex;
@@ -478,31 +738,31 @@ p {
   justify-content: space-between;
   align-content: flex-start;
 }
-/* line 45, ../sass/partials/_home-splash.scss */
+/* line 51, ../sass/pages/_home-splash.scss */
 .splash-title .logo {
   width: 100%;
   font-size: 3.33333rem;
   line-height: 6.66667rem;
   font-weight: 700;
 }
-/* line 51, ../sass/partials/_home-splash.scss */
+/* line 57, ../sass/pages/_home-splash.scss */
 .splash-title .contact {
   width: 100%;
   font-size: 1.5rem;
   line-height: 3rem;
   line-height: 2.66667rem;
 }
-/* line 56, ../sass/partials/_home-splash.scss */
+/* line 62, ../sass/pages/_home-splash.scss */
 .splash-title .contact span {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-/* line 61, ../sass/partials/_home-splash.scss */
+/* line 67, ../sass/pages/_home-splash.scss */
 .splash-title .contact a {
   color: #9B9B9B;
 }
 
-/* line 67, ../sass/partials/_home-splash.scss */
+/* line 73, ../sass/pages/_home-splash.scss */
 .splash-intro {
   display: -webkit-flex;
   -webkit-flex-wrap: wrap;
@@ -515,14 +775,14 @@ p {
   justify-content: flex-start;
   align-content: flex-start;
 }
-/* line 76, ../sass/partials/_home-splash.scss */
+/* line 82, ../sass/pages/_home-splash.scss */
 .splash-intro .current {
   width: 100%;
   font-size: 1rem;
   line-height: 2rem;
   line-height: 2.66667rem;
 }
-/* line 82, ../sass/partials/_home-splash.scss */
+/* line 88, ../sass/pages/_home-splash.scss */
 .splash-intro .links {
   width: 100%;
   font-size: 1.33333rem;
@@ -538,36 +798,44 @@ p {
   justify-content: flex-start;
   align-content: flex-start;
 }
-/* line 93, ../sass/partials/_home-splash.scss */
+/* line 99, ../sass/pages/_home-splash.scss */
 .splash-intro .links .link {
   margin-right: 1rem;
 }
-/* line 97, ../sass/partials/_home-splash.scss */
+/* line 103, ../sass/pages/_home-splash.scss */
 .splash-intro .links a {
   color: #9B9B9B;
 }
 
 @media screen and (max-width: 700px) {
-  /* line 104, ../sass/partials/_home-splash.scss */
+  /* line 110, ../sass/pages/_home-splash.scss */
   .splash {
     padding: 0;
     padding-bottom: 11vw;
   }
 
-  /* line 108, ../sass/partials/_home-splash.scss */
+  /* line 114, ../sass/pages/_home-splash.scss */
   .links {
     margin-bottom: 1rem;
   }
 
-  /* line 111, ../sass/partials/_home-splash.scss */
+  /* line 117, ../sass/pages/_home-splash.scss */
   .link {
     width: 100%;
   }
 }
-/* line 2, ../sass/partials/_home-portfolio.scss */
+/**
+ *	Portfolio styles
+ */
+/* line 5, ../sass/pages/_home-portfolio.scss */
+.portfolio {
+  position: relative;
+}
+
+/* line 10, ../sass/pages/_home-portfolio.scss */
 .item-side {
-  margin-left: auto;
-  margin-right: 3.14286vw;
+  width: 22vw;
+  padding-right: 3.14286vw;
   text-align: right;
   display: -webkit-flex;
   -webkit-flex-wrap: nowrap;
@@ -580,40 +848,42 @@ p {
   justify-content: flex-start;
   align-content: flex-start;
 }
-/* line 15, ../sass/partials/_home-portfolio.scss */
+/* line 22, ../sass/pages/_home-portfolio.scss */
 .item-side .number {
-  font-family: Vollkorn, Lora, serif;
+  font-family: Lora, serif;
   font-size: 1.33333rem;
   line-height: 2.66667rem;
   color: #9B9B9B;
 }
 
-/* line 23, ../sass/partials/_home-portfolio.scss */
+/* line 30, ../sass/pages/_home-portfolio.scss */
 .item-main {
-  width: 65vw;
+  flex: 1;
   margin-bottom: 3.5rem;
 }
-/* line 27, ../sass/partials/_home-portfolio.scss */
-.item-main .name {
+/* line 34, ../sass/pages/_home-portfolio.scss */
+.item-main .title {
   display: inline-block;
   font-size: 2.5rem;
   line-height: 5rem;
+  font-weight: 400;
 }
-/* line 31, ../sass/partials/_home-portfolio.scss */
+/* line 39, ../sass/pages/_home-portfolio.scss */
 .item-main .website {
   display: inline-block;
   margin-left: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
   color: #9B9B9B;
 }
-/* line 36, ../sass/partials/_home-portfolio.scss */
-.item-main .title {
-  font-family: Vollkorn, Lora, serif;
+/* line 45, ../sass/pages/_home-portfolio.scss */
+.item-main .desc {
   font-size: 1.33333rem;
   line-height: 2rem;
   color: #9B9B9B;
 }
 
-/* line 45, ../sass/partials/_home-portfolio.scss */
+/* line 53, ../sass/pages/_home-portfolio.scss */
 .portfolio-divider, .item-title, .item-content {
   position: relative;
   display: -webkit-flex;
@@ -628,7 +898,7 @@ p {
   align-content: stretch;
 }
 
-/* line 57, ../sass/partials/_home-portfolio.scss */
+/* line 65, ../sass/pages/_home-portfolio.scss */
 .portfolio-divider {
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -636,7 +906,7 @@ p {
   line-height: 2.66667rem;
   color: #9B9B9B;
 }
-/* line 63, ../sass/partials/_home-portfolio.scss */
+/* line 71, ../sass/pages/_home-portfolio.scss */
 .portfolio-divider .item-main {
   display: -webkit-flex;
   -webkit-flex-wrap: nowrap;
@@ -647,74 +917,66 @@ p {
   flex-direction: row;
   justify-content: flex-start;
 }
-/* line 71, ../sass/partials/_home-portfolio.scss */
+/* line 79, ../sass/pages/_home-portfolio.scss */
 .portfolio-divider .item-main p {
   white-space: nowrap;
   margin-right: 2.5rem;
 }
-/* line 76, ../sass/partials/_home-portfolio.scss */
+/* line 84, ../sass/pages/_home-portfolio.scss */
 .portfolio-divider .item-main hr {
-  width: 100%;
+  width: 80%;
   height: 1px;
+  margin: 0;
   margin-top: 13px;
   background-color: #9B9B9B;
 }
 
-/* line 86, ../sass/partials/_home-portfolio.scss */
+/* line 95, ../sass/pages/_home-portfolio.scss */
 .item-title {
   -webkit-align-items: baseline;
   align-items: baseline;
 }
 
-/* line 95, ../sass/partials/_home-portfolio.scss */
+/* line 104, ../sass/pages/_home-portfolio.scss */
 .item-content hr {
   margin: 1rem;
   margin-left: auto;
   margin-right: 0;
 }
-/* line 101, ../sass/partials/_home-portfolio.scss */
+/* line 110, ../sass/pages/_home-portfolio.scss */
 .item-content .top-divider {
   width: 6.5rem;
   height: 4px;
 }
-/* line 106, ../sass/partials/_home-portfolio.scss */
-.item-content .divider {
-  width: 11rem;
-  height: 1px;
-  background-color: #BFBFBF;
-}
-/* line 112, ../sass/partials/_home-portfolio.scss */
-.item-content .spec-name, .item-content a {
+/* line 115, ../sass/pages/_home-portfolio.scss */
+.item-content .spec-title,
+.item-content .spec-list,
+.item-content .spec-item {
   float: right;
   clear: both;
   font-size: 1.16667rem;
   line-height: 2.33333rem;
 }
-/* line 118, ../sass/partials/_home-portfolio.scss */
-.item-content .spec-name {
-  color: #9B9B9B;
-  text-transform: uppercase;
-}
-/* line 124, ../sass/partials/_home-portfolio.scss */
+/* line 124, ../sass/pages/_home-portfolio.scss */
 .item-content .summary {
   max-width: 650px;
   font-size: 1.83333rem;
   line-height: 3.66667rem;
   color: #4A4A4A;
 }
-/* line 130, ../sass/partials/_home-portfolio.scss */
+/* line 130, ../sass/pages/_home-portfolio.scss */
 .item-content .image-slider {
   margin: 0;
   margin-top: 5.5rem;
   margin-bottom: 5.5rem;
   padding: 0;
 }
-/* line 137, ../sass/partials/_home-portfolio.scss */
+/* line 137, ../sass/pages/_home-portfolio.scss */
 .item-content .item-launch, .item-content .image-slider {
   width: 85%;
   max-width: 85%;
 }
-/* line 142, ../sass/partials/_home-portfolio.scss */
+/* line 142, ../sass/pages/_home-portfolio.scss */
 .item-content .launch-button {
   width: 36rem;
   height: 100%;
@@ -726,148 +988,13 @@ p {
   font-weight: 700;
   border-radius: 5px;
 }
-/* line 156, ../sass/partials/_home-portfolio.scss */
+/* line 153, ../sass/pages/_home-portfolio.scss */
 .item-content .launch-button:before {
   font-size: 150%;
 }
 
-/* line 167, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(5n+1) .top-divider {
-  background-color: #634180;
-}
-/* line 171, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(5n+1) .btn {
-  color: #634180;
-  border: 2px solid #634180;
-}
-/* line 26, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(5n+1) .btn:hover, .item:nth-child(5n+1) .btn:focus {
-  background-color: #634180;
-  color: white;
-}
-/* line 30, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(5n+1) .btn:active:before {
-  color: #634180;
-}
-/* line 12, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(5n+1) .effect:hover, .item:nth-child(5n+1) .effect:focus {
-  color: #634180;
-}
-/* line 15, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(5n+1) .effect:before {
-  background: #634180;
-}
-
-/* line 167, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(5n+2) .top-divider {
-  background-color: #6596B2;
-}
-/* line 171, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(5n+2) .btn {
-  color: #6596B2;
-  border: 2px solid #6596B2;
-}
-/* line 26, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(5n+2) .btn:hover, .item:nth-child(5n+2) .btn:focus {
-  background-color: #6596B2;
-  color: white;
-}
-/* line 30, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(5n+2) .btn:active:before {
-  color: #6596B2;
-}
-/* line 12, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(5n+2) .effect:hover, .item:nth-child(5n+2) .effect:focus {
-  color: #6596B2;
-}
-/* line 15, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(5n+2) .effect:before {
-  background: #6596B2;
-}
-
-/* line 167, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(5n+3) .top-divider {
-  background-color: #C9C15D;
-}
-/* line 171, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(5n+3) .btn {
-  color: #C9C15D;
-  border: 2px solid #C9C15D;
-}
-/* line 26, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(5n+3) .btn:hover, .item:nth-child(5n+3) .btn:focus {
-  background-color: #C9C15D;
-  color: white;
-}
-/* line 30, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(5n+3) .btn:active:before {
-  color: #C9C15D;
-}
-/* line 12, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(5n+3) .effect:hover, .item:nth-child(5n+3) .effect:focus {
-  color: #C9C15D;
-}
-/* line 15, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(5n+3) .effect:before {
-  background: #C9C15D;
-}
-
-/* line 167, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(5n+4) .top-divider {
-  background-color: #CA135A;
-}
-/* line 171, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(5n+4) .btn {
-  color: #CA135A;
-  border: 2px solid #CA135A;
-}
-/* line 26, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(5n+4) .btn:hover, .item:nth-child(5n+4) .btn:focus {
-  background-color: #CA135A;
-  color: white;
-}
-/* line 30, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(5n+4) .btn:active:before {
-  color: #CA135A;
-}
-/* line 12, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(5n+4) .effect:hover, .item:nth-child(5n+4) .effect:focus {
-  color: #CA135A;
-}
-/* line 15, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(5n+4) .effect:before {
-  background: #CA135A;
-}
-
-/* line 167, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(5n+5) .top-divider {
-  background-color: #25485C;
-}
-/* line 171, ../sass/partials/_home-portfolio.scss */
-.item:nth-child(5n+5) .btn {
-  color: #25485C;
-  border: 2px solid #25485C;
-}
-/* line 26, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(5n+5) .btn:hover, .item:nth-child(5n+5) .btn:focus {
-  background-color: #25485C;
-  color: white;
-}
-/* line 30, ../sass/vendor/_buttonComponent.scss */
-.item:nth-child(5n+5) .btn:active:before {
-  color: #25485C;
-}
-/* line 12, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(5n+5) .effect:hover, .item:nth-child(5n+5) .effect:focus {
-  color: #25485C;
-}
-/* line 15, ../sass/vendor/_linkComponent.scss */
-.item:nth-child(5n+5) .effect:before {
-  background: #25485C;
-}
-
 @media screen and (max-width: 700px) {
-  /* line 184, ../sass/partials/_home-portfolio.scss */
+  /* line 161, ../sass/pages/_home-portfolio.scss */
   .item-side {
     width: 100%;
     padding: 0;
@@ -880,18 +1007,19 @@ p {
     flex-direction: row;
   }
 
-  /* line 195, ../sass/partials/_home-portfolio.scss */
+  /* line 172, ../sass/pages/_home-portfolio.scss */
   .item-main {
     width: 100%;
+    flex: none;
   }
 
-  /* line 199, ../sass/partials/_home-portfolio.scss */
+  /* line 177, ../sass/pages/_home-portfolio.scss */
   .portfolio-divider, .item-title, .item-content {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 
-  /* line 206, ../sass/partials/_home-portfolio.scss */
+  /* line 184, ../sass/pages/_home-portfolio.scss */
   .portfolio-divider .item-main {
     display: -webkit-flex;
     -webkit-flex-wrap: wrap;
@@ -902,42 +1030,518 @@ p {
     flex-direction: column;
     justify-content: flex-start;
   }
-  /* line 214, ../sass/partials/_home-portfolio.scss */
+  /* line 192, ../sass/pages/_home-portfolio.scss */
   .portfolio-divider .item-main hr {
     margin-top: 0.5rem;
   }
 
-  /* line 221, ../sass/partials/_home-portfolio.scss */
+  /* line 199, ../sass/pages/_home-portfolio.scss */
   .item-title .item-main {
     margin-bottom: 1rem;
   }
 
-  /* line 227, ../sass/partials/_home-portfolio.scss */
+  /* line 205, ../sass/pages/_home-portfolio.scss */
   .item-content .item-side {
     margin-bottom: 2rem;
   }
-  /* line 231, ../sass/partials/_home-portfolio.scss */
+  /* line 209, ../sass/pages/_home-portfolio.scss */
   .item-content .top-divider {
     margin-left: 0;
     margin-right: auto;
     margin-bottom: 1rem;
   }
-  /* line 237, ../sass/partials/_home-portfolio.scss */
+  /* line 215, ../sass/pages/_home-portfolio.scss */
   .item-content .divider {
     display: none;
   }
-  /* line 241, ../sass/partials/_home-portfolio.scss */
-  .item-content .spec {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  /* line 246, ../sass/partials/_home-portfolio.scss */
-  .item-content .spec-name, .item-content a {
+  /* line 219, ../sass/pages/_home-portfolio.scss */
+  .item-content .spec-title,
+  .item-content .spec-list,
+  .item-content .spec-item {
     float: none;
     line-height: 1.66667rem;
   }
-  /* line 251, ../sass/partials/_home-portfolio.scss */
-  .item-content .spec-list {
+  /* line 226, ../sass/pages/_home-portfolio.scss */
+  .item-content .item-launch, .item-content .image-slider {
+    width: 100%;
+    max-width: 100%;
+  }
+  /* line 231, ../sass/pages/_home-portfolio.scss */
+  .item-content .launch-button {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 237, ../sass/pages/_home-portfolio.scss */
+  .item-content .image-slider {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  /* line 240, ../sass/pages/_home-portfolio.scss */
+  .item-content .image-slider .gallery-arrow {
+    display: none;
+  }
+}
+/**
+ *
+ *	Homepage colors
+ *
+ */
+/* line 13, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+1) .top-divider {
+  background-color: #634180;
+}
+/* line 17, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+1) .btn-effect {
+  color: #634180;
+  border: 2px solid #634180;
+}
+/* line 26, ../sass/vendor/_buttonEffect.scss */
+.portfolio-item:nth-of-type(4n+1) .btn-effect:hover, .portfolio-item:nth-of-type(4n+1) .btn-effect:focus {
+  background-color: #634180;
+  color: white;
+}
+/* line 30, ../sass/vendor/_buttonEffect.scss */
+.portfolio-item:nth-of-type(4n+1) .btn-effect:active:before {
+  color: #634180;
+}
+/* line 21, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+1) .link-effect {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
+}
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+1) .link-effect:hover, .portfolio-item:nth-of-type(4n+1) .link-effect:focus {
+  color: #634180;
+}
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+1) .link-effect.link-before:before {
+  background: #634180;
+}
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+1) .link-effect.link-after:after {
+  background: #634180;
+}
+
+/* line 26, ../sass/pages/_home-color.scss */
+.nav-link:nth-of-type(4n+2) {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
+}
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+2):hover, .nav-link:nth-of-type(4n+2):focus {
+  color: #634180;
+}
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+2).link-before:before {
+  background: #634180;
+}
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+2).link-after:after {
+  background: #634180;
+}
+
+/* line 13, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+2) .top-divider {
+  background-color: orange;
+}
+/* line 17, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+2) .btn-effect {
+  color: orange;
+  border: 2px solid orange;
+}
+/* line 26, ../sass/vendor/_buttonEffect.scss */
+.portfolio-item:nth-of-type(4n+2) .btn-effect:hover, .portfolio-item:nth-of-type(4n+2) .btn-effect:focus {
+  background-color: orange;
+  color: white;
+}
+/* line 30, ../sass/vendor/_buttonEffect.scss */
+.portfolio-item:nth-of-type(4n+2) .btn-effect:active:before {
+  color: orange;
+}
+/* line 21, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+2) .link-effect {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
+}
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+2) .link-effect:hover, .portfolio-item:nth-of-type(4n+2) .link-effect:focus {
+  color: orange;
+}
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+2) .link-effect.link-before:before {
+  background: orange;
+}
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+2) .link-effect.link-after:after {
+  background: orange;
+}
+
+/* line 26, ../sass/pages/_home-color.scss */
+.nav-link:nth-of-type(4n+3) {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
+}
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+3):hover, .nav-link:nth-of-type(4n+3):focus {
+  color: orange;
+}
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+3).link-before:before {
+  background: orange;
+}
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+3).link-after:after {
+  background: orange;
+}
+
+/* line 13, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+3) .top-divider {
+  background-color: green;
+}
+/* line 17, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+3) .btn-effect {
+  color: green;
+  border: 2px solid green;
+}
+/* line 26, ../sass/vendor/_buttonEffect.scss */
+.portfolio-item:nth-of-type(4n+3) .btn-effect:hover, .portfolio-item:nth-of-type(4n+3) .btn-effect:focus {
+  background-color: green;
+  color: white;
+}
+/* line 30, ../sass/vendor/_buttonEffect.scss */
+.portfolio-item:nth-of-type(4n+3) .btn-effect:active:before {
+  color: green;
+}
+/* line 21, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+3) .link-effect {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
+}
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+3) .link-effect:hover, .portfolio-item:nth-of-type(4n+3) .link-effect:focus {
+  color: green;
+}
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+3) .link-effect.link-before:before {
+  background: green;
+}
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+3) .link-effect.link-after:after {
+  background: green;
+}
+
+/* line 26, ../sass/pages/_home-color.scss */
+.nav-link:nth-of-type(4n+4) {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
+}
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+4):hover, .nav-link:nth-of-type(4n+4):focus {
+  color: green;
+}
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+4).link-before:before {
+  background: green;
+}
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+4).link-after:after {
+  background: green;
+}
+
+/* line 13, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+4) .top-divider {
+  background-color: blue;
+}
+/* line 17, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+4) .btn-effect {
+  color: blue;
+  border: 2px solid blue;
+}
+/* line 26, ../sass/vendor/_buttonEffect.scss */
+.portfolio-item:nth-of-type(4n+4) .btn-effect:hover, .portfolio-item:nth-of-type(4n+4) .btn-effect:focus {
+  background-color: blue;
+  color: white;
+}
+/* line 30, ../sass/vendor/_buttonEffect.scss */
+.portfolio-item:nth-of-type(4n+4) .btn-effect:active:before {
+  color: blue;
+}
+/* line 21, ../sass/pages/_home-color.scss */
+.portfolio-item:nth-of-type(4n+4) .link-effect {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
+}
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+4) .link-effect:hover, .portfolio-item:nth-of-type(4n+4) .link-effect:focus {
+  color: blue;
+}
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+4) .link-effect.link-before:before {
+  background: blue;
+}
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.portfolio-item:nth-of-type(4n+4) .link-effect.link-after:after {
+  background: blue;
+}
+
+/* line 26, ../sass/pages/_home-color.scss */
+.nav-link:nth-of-type(4n+5) {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
+}
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+5):hover, .nav-link:nth-of-type(4n+5):focus {
+  color: blue;
+}
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+5).link-before:before {
+  background: blue;
+}
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-of-type(4n+5).link-after:after {
+  background: blue;
+}
+
+/* line 31, ../sass/pages/_home-color.scss */
+.nav-link:nth-child(1) {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
+}
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-child(1):hover, .nav-link:nth-child(1):focus {
+  color: #50e3c2;
+}
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-child(1).link-before:before {
+  background: #50e3c2;
+}
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.nav-link:nth-child(1).link-after:after {
+  background: #50e3c2;
+}
+
+/**
+ *
+ *	Case Study page
+ *
+ */
+/* line 7, ../sass/pages/_case.scss */
+#case {
+  font-size: 100%;
+}
+
+/**
+ *
+ *	Case study intro section
+ *
+ */
+/* line 7, ../sass/pages/_case-intro.scss */
+.intro {
+  padding: 4rem;
+  color: white;
+}
+/* line 11, ../sass/pages/_case-intro.scss */
+.intro .wrapper {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+/* line 15, ../sass/pages/_case-intro.scss */
+.intro .title {
+  font-family: Karla, sans-serif;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 8rem;
+  line-height: 6rem;
+}
+/* line 21, ../sass/pages/_case-intro.scss */
+.intro .desc {
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+/* line 24, ../sass/pages/_case-intro.scss */
+.intro .top-divider {
+  height: 3px;
+  margin: 2rem;
+  margin-left: 0;
+  margin-right: auto;
+}
+/* line 30, ../sass/pages/_case-intro.scss */
+.intro .body {
+  max-width: 600px;
+  font-family: Karla, sans-serif;
+}
+/* line 34, ../sass/pages/_case-intro.scss */
+.intro .website {
+  font-size: 1.33333rem;
+  line-height: 2.66667rem;
+}
+
+/* line 40, ../sass/pages/_case-intro.scss */
+.wrapper,
+.nav-wrapper,
+.select-wrapper {
+  max-width: 91rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ *
+ *	Case study main content
+ *
+ */
+/* line 8, ../sass/pages/_case-main.scss */
+.tab-nav a {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  font-weight: 700;
+}
+
+/* line 13, ../sass/pages/_case-main.scss */
+.nav-wrapper {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* line 19, ../sass/pages/_case-main.scss */
+.page-section {
+  padding: 4rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  -webkit-align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+}
+
+/* line 34, ../sass/pages/_case-main.scss */
+.side {
+  position: absolute;
+  right: 15vw;
+}
+/* line 38, ../sass/pages/_case-main.scss */
+.side .top-divider,
+.side .divider,
+.side .spec-title,
+.side .spec-list,
+.side .spec-item {
+  float: left;
+  clear: both;
+}
+/* line 47, ../sass/pages/_case-main.scss */
+.side .spec-title {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  line-height: 2.66667rem;
+}
+/* line 52, ../sass/pages/_case-main.scss */
+.side .spec-list {
+  font-size: 1.66667rem;
+  line-height: 3.33333rem;
+  line-height: 2.66667rem;
+  margin-bottom: 0.5rem;
+}
+/* line 58, ../sass/pages/_case-main.scss */
+.side .top-divider {
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 64, ../sass/pages/_case-main.scss */
+  .side {
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+    right: 0;
+  }
+  /* line 70, ../sass/pages/_case-main.scss */
+  .side .top-divider {
+    margin-bottom: 2.5rem;
+  }
+  /* line 74, ../sass/pages/_case-main.scss */
+  .side .divider {
+    display: none;
+  }
+  /* line 78, ../sass/pages/_case-main.scss */
+  .side .spec-title,
+  .side .spec-list,
+  .side .spec-item {
+    float: none;
+  }
+  /* line 84, ../sass/pages/_case-main.scss */
+  .side .spec-list {
     display: -webkit-flex;
     -webkit-flex-wrap: wrap;
     -webkit-flex-direction: row;
@@ -947,95 +1551,409 @@ p {
     flex-direction: row;
     justify-content: flex-start;
   }
-  /* line 259, ../sass/partials/_home-portfolio.scss */
-  .item-content .spec-list a {
+  /* line 93, ../sass/pages/_case-main.scss */
+  .side .spec-item {
     margin-right: 1rem;
   }
-  /* line 261, ../sass/partials/_home-portfolio.scss */
-  .item-content .spec-list a:after {
+  /* line 95, ../sass/pages/_case-main.scss */
+  .side .spec-item:after {
     content: ",";
   }
-  /* line 264, ../sass/partials/_home-portfolio.scss */
-  .item-content .spec-list a:last-child:after {
+  /* line 98, ../sass/pages/_case-main.scss */
+  .side .spec-item:last-child:after {
     content: "";
-  }
-  /* line 270, ../sass/partials/_home-portfolio.scss */
-  .item-content .item-launch, .item-content .image-slider {
-    width: 100%;
-    max-width: 100%;
-  }
-  /* line 275, ../sass/partials/_home-portfolio.scss */
-  .item-content .launch-button {
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* line 281, ../sass/partials/_home-portfolio.scss */
-  .item-content .image-slider {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-  }
-  /* line 284, ../sass/partials/_home-portfolio.scss */
-  .item-content .image-slider .gallery-arrow {
-    display: none;
   }
 }
 /**
- *	Case Study page
+ *
+ *	Case Study colors
+ *
  */
-/* line 5, ../sass/partials/_case.scss */
-#case-study {
-  padding: 0;
+/* line 12, ../sass/pages/_case-color.scss */
+.retailmenot .intro {
+  background-color: #634180;
+}
+/* line 14, ../sass/pages/_case-color.scss */
+.retailmenot .intro .top-divider {
+  background-color: #9d72cb;
+}
+/* line 17, ../sass/pages/_case-color.scss */
+.retailmenot .intro .website {
+  color: #9d72cb;
+}
+/* line 21, ../sass/pages/_case-color.scss */
+.retailmenot .bg-primary {
+  background-color: #634180;
+}
+/* line 24, ../sass/pages/_case-color.scss */
+.retailmenot .top-divider {
+  background-color: #634180;
+}
+/* line 17, ../sass/vendor/_tabSlider.scss */
+.retailmenot .tab-slider .tab-nav {
+  border-bottom: 1px solid #BFBFBF;
+  color: #BFBFBF;
+}
+/* line 22, ../sass/vendor/_tabSlider.scss */
+.retailmenot .tab-slider .nav-title a {
+  color: #BFBFBF;
+}
+/* line 26, ../sass/vendor/_tabSlider.scss */
+.retailmenot .tab-slider .nav-title.selected a {
+  color: #634180;
+}
+/* line 31, ../sass/vendor/_tabSlider.scss */
+.retailmenot .tab-slider .select-bar {
+  background-color: #634180;
+}
+@media screen and (max-width: 600px) {
+  /* line 36, ../sass/vendor/_tabSlider.scss */
+  .retailmenot .tab-slider .nav-title.selected {
+    border-bottom: 6px solid #634180;
+  }
+}
+/* line 30, ../sass/pages/_case-color.scss */
+.retailmenot .link-effect {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
+}
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.retailmenot .link-effect:hover, .retailmenot .link-effect:focus {
+  color: #634180;
+}
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.retailmenot .link-effect.link-before:before {
+  background: #634180;
+}
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.retailmenot .link-effect.link-after:after {
+  background: #634180;
 }
 
-/* line 1, ../sass/partials/_case-intro.scss */
-.wrapper {
-  max-width: 101rem;
+/* line 12, ../sass/pages/_case-color.scss */
+.hackillinois .intro {
+  background-color: orange;
+}
+/* line 14, ../sass/pages/_case-color.scss */
+.hackillinois .intro .top-divider {
+  background-color: red;
+}
+/* line 17, ../sass/pages/_case-color.scss */
+.hackillinois .intro .website {
+  color: red;
+}
+/* line 21, ../sass/pages/_case-color.scss */
+.hackillinois .bg-primary {
+  background-color: orange;
+}
+/* line 24, ../sass/pages/_case-color.scss */
+.hackillinois .top-divider {
+  background-color: orange;
+}
+/* line 17, ../sass/vendor/_tabSlider.scss */
+.hackillinois .tab-slider .tab-nav {
+  border-bottom: 1px solid #BFBFBF;
+  color: #BFBFBF;
+}
+/* line 22, ../sass/vendor/_tabSlider.scss */
+.hackillinois .tab-slider .nav-title a {
+  color: #BFBFBF;
+}
+/* line 26, ../sass/vendor/_tabSlider.scss */
+.hackillinois .tab-slider .nav-title.selected a {
+  color: orange;
+}
+/* line 31, ../sass/vendor/_tabSlider.scss */
+.hackillinois .tab-slider .select-bar {
+  background-color: orange;
+}
+@media screen and (max-width: 600px) {
+  /* line 36, ../sass/vendor/_tabSlider.scss */
+  .hackillinois .tab-slider .nav-title.selected {
+    border-bottom: 6px solid orange;
+  }
+}
+/* line 30, ../sass/pages/_case-color.scss */
+.hackillinois .link-effect {
+  /*/.link-effect-a:after{
+  &:after,
+  &:before{
+  	background: $color;
+  //}
+  //.link-effect,
+  //.link-effect-b:before{
+  	background: $color;
+  }*/
+}
+/* line 16, ../sass/vendor/_linkEffect.scss */
+.hackillinois .link-effect:hover, .hackillinois .link-effect:focus {
+  color: orange;
+}
+/* line 22, ../sass/vendor/_linkEffect.scss */
+.hackillinois .link-effect.link-before:before {
+  background: orange;
+}
+/* line 28, ../sass/vendor/_linkEffect.scss */
+.hackillinois .link-effect.link-after:after {
+  background: orange;
+}
+
+/**
+ *
+ *	Text and content base styles
+ *
+ */
+/* line 8, ../sass/components/_content.scss */
+.title-super {
+  font-size: 2.66667rem;
+  line-height: 5.33333rem;
+  margin-bottom: 1.5rem;
+  font-family: Lora, serif;
+  font-weight: 700;
+}
+
+/* line 16, ../sass/components/_content.scss */
+.title {
+  font-size: 2.33333rem;
+  line-height: 4.66667rem;
+  font-family: Lora, serif;
+  font-weight: 700;
+}
+
+/* line 23, ../sass/components/_content.scss */
+.title-sub {
+  font-size: 1.83333rem;
+  line-height: 3.66667rem;
+  line-height: 4.66667rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* line 31, ../sass/components/_content.scss */
+.desc {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  font-family: Lora, serif;
+}
+
+/* line 37, ../sass/components/_content.scss */
+.body {
+  max-width: 650px;
+  margin-bottom: 1.5rem;
+  font-size: 2.16667rem;
+  line-height: 4.33333rem;
+  line-height: 3.66667rem;
+  font-family: Lora, serif;
+}
+
+/* line 46, ../sass/components/_content.scss */
+.body-sub {
+  max-width: 650px;
+  font-size: 2rem;
+  line-height: 4rem;
+  line-height: 3.33333rem;
+  font-family: Lora, serif;
+}
+
+/* line 54, ../sass/components/_content.scss */
+.top-divider {
+  width: 6.5rem;
+  height: 5px;
+  margin: 1.5rem;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* line 63, ../sass/components/_content.scss */
+.divider {
+  width: 11rem;
+  height: 1px;
+  background-color: #BFBFBF;
+}
+
+/* line 70, ../sass/components/_content.scss */
+.website {
+  font-size: 1.33333rem;
+  line-height: 2.66667rem;
+}
+
+/* line 75, ../sass/components/_content.scss */
+.spec-title {
+  color: #9B9B9B;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 700px) {
+  /* line 82, ../sass/components/_content.scss */
+  .spec {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* line 87, ../sass/components/_content.scss */
+  .spec-list {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  /* line 96, ../sass/components/_content.scss */
+  .spec-item {
+    margin-right: 1rem;
+  }
+  /* line 98, ../sass/components/_content.scss */
+  .spec-item:after {
+    content: ",";
+  }
+  /* line 101, ../sass/components/_content.scss */
+  .spec-item:last-child:after {
+    content: "";
+  }
+}
+/**
+ *
+ *	General layout & spacing classes
+ *
+ */
+/* line 9, ../sass/components/_layout.scss */
+.bot-space {
+  margin-bottom: 6rem;
+}
+
+/* line 14, ../sass/components/_layout.scss */
+.align {
+  width: 91rem;
+}
+
+/* line 19, ../sass/components/_layout.scss */
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+/* line 24, ../sass/components/_layout.scss */
+.center .top-divider {
+  margin: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 7, ../sass/partials/_case-intro.scss */
-.intro {
+/* line 32, ../sass/components/_layout.scss */
+.col-two, .col-three {
+  width: 100%;
+  display: -webkit-flex;
+  -webkit-flex-wrap: nowrap;
+  -webkit-flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-align-content: flex-start;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: flex-start;
+}
+
+/* line 43, ../sass/components/_layout.scss */
+.col {
+  margin-right: 3vw;
+  margin-left: 3vw;
+}
+
+/* line 49, ../sass/components/_layout.scss */
+.col-two .col {
+  width: 100%/2;
+}
+
+/* line 55, ../sass/components/_layout.scss */
+.col-three .col {
+  width: 100%/3;
+}
+
+@media screen and (max-width: 700px) {
+  /* line 61, ../sass/components/_layout.scss */
+  .col-three {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  /* line 65, ../sass/components/_layout.scss */
+  .col-three .col {
+    margin: 0;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  /* line 74, ../sass/components/_layout.scss */
+  .col-two {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  /* line 78, ../sass/components/_layout.scss */
+  .col-two .col {
+    margin: 0;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}
+/**
+ *
+ *	Other helper & utility classes
+ *
+ */
+/* line 8, ../sass/components/_utility.scss */
+.bg-primary {
   color: white;
-  background-color: #634180;
 }
-/* line 11, ../sass/partials/_case-intro.scss */
-.intro .wrapper {
-  padding: 6rem;
-  padding-top: 10vw;
-  padding-bottom: 5vw;
+
+/* line 15, ../sass/components/_utility.scss */
+.bg-gray {
+  background-color: #e9e7e7;
 }
-/* line 16, ../sass/partials/_case-intro.scss */
-.intro .name {
-  font-size: 4rem;
-  line-height: 8rem;
+
+/* line 20, ../sass/components/_utility.scss */
+.bg-image {
+  width: 100%;
+  position: relative;
 }
-/* line 19, ../sass/partials/_case-intro.scss */
-.intro .title {
-  font-family: Vollkorn, Lora, serif;
-  font-size: 1.9rem;
-  line-height: 3.33333rem;
+/* line 23, ../sass/components/_utility.scss */
+.bg-image .img-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
-/* line 23, ../sass/partials/_case-intro.scss */
-.intro .top-divider {
-  width: 6.5rem;
-  height: 3px;
-  margin: 2rem;
-  margin-left: 0;
-  margin-right: auto;
-  background-color: #9d72cb;
+
+/* line 35, ../sass/components/_utility.scss */
+.img-circle {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1.5rem;
+  border-radius: 100%;
 }
-/* line 31, ../sass/partials/_case-intro.scss */
-.intro .summary {
-  max-width: 600px;
-  margin-bottom: 5rem;
-  font-size: 2.33333rem;
-  line-height: 4.66667rem;
+
+/* line 42, ../sass/components/_utility.scss */
+.font-primary {
+  font-family: Karla;
 }
-/* line 36, ../sass/partials/_case-intro.scss */
-.intro .website {
-  font-size: 1.33333rem;
-  line-height: 2.66667rem;
-  color: #9d72cb;
+
+/* line 46, ../sass/components/_utility.scss */
+.font-secondary {
+  font-family: Lora;
 }

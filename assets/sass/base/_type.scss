@@ -21,15 +21,3 @@ $base-line-height: 1 * $base-font-size;
   font-size: font-setting($level);
   line-height: line-setting($level);
 }
-
-/**
- *
- *	Standardized spacing
- *
- */
-
-$base-spacing: 1rem;
-
-@function spacing($level) {
-  @return (((0.5 * $level) + 1) * $base-spacing);
-}

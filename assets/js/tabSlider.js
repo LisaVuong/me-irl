@@ -8,28 +8,42 @@ var TabSlider = function () {
 	var maxIndex;
 
 	var tabs;
+	var selectBar;
+	var selectSpacing;
 	var pages;
 
 	/**
 	 *	Animates page transition
 	 */
 	var updatePage = function (newIndex) {
-		var position = -100/maxIndex * newIndex + '%';
+		pages[currIndex].className += ' hide';	// Hide class first before removing, prevent jumping scrollbar
 
-		// With JQuery
-		//$.Velocity.animate(pages, { translateX: position }, 500);
+		if (window.jQuery) {
+			$.velocity.animate(pages[newIndex], 'fadeIn', 500);
+		} else {
+			Velocity(pages[newIndex], 'fadeIn', 500);
+			if (newIndex != currIndex) {
+				Velocity(pages[currIndex], 'fadeOut', 0);
+			}
+		}
 
-		// Without JQuery
-		Velocity(pages, { translateX: position }, 500);
+		pages[currIndex].className = 'content-page';	// Return class to normal
 	};
 
 	/**
 	 *	Selects a new tab
 	 */
 	var updateTab = function (newIndex) {
+		var position = newIndex/maxIndex * 100 + selectSpacing/2 + '%';
+
+		if (window.jQuery) {
+			$.Velocity.animate(selectBar, { left: position }, 500);
+		} else {
+			Velocity(selectBar, { left: position }, 500);
+		}
+
 		tabs[currIndex].className = 'nav-title';
 		tabs[newIndex].className += ' selected';
-		currIndex = newIndex;
 	};
 
 	/**
@@ -37,7 +51,6 @@ var TabSlider = function () {
 	 */
 	var update = function (newIndex) {
 		if (newIndex < 0 || newIndex >= maxIndex) {
-			console.log('Invalid index, out of bounds');
 			return;
 		}
 		updatePage(newIndex);
@@ -49,26 +62,32 @@ var TabSlider = function () {
 	 *	Adds event listeners
 	 */
 	var initSlide = function (slider) {
-		tabs = slider.children[0].children[0].children;
-		pages = slider.children[1].children[0];
+		// Init variables
+		tabs = slider.getElementsByClassName('nav-title');
+		selectBar = slider.getElementsByClassName('select-bar')[0];
+		pages = slider.getElementsByClassName('content-page');
 
 		currIndex = 0;
 		maxIndex = tabs.length;
 
-		pages.style.width = 100 * maxIndex + '%';
+		// Set nav selection bar
+		selectSpacing = 130/Math.pow(maxIndex,2);
+		selectBar.style.width = 100/maxIndex - selectSpacing + '%';
+		selectBar.style.left = selectSpacing/2+'%';
 
-		if(pages.children.length != maxIndex){
-			console.log('Incorrect number of pages in tab slider');
-			maxIndex = Math.min(pages.children.length, maxIndex);
+		// Check for correct markup
+		if (pages.length !== maxIndex) {
+			console.lrog('Incorrect number of pages in tab slider');
+			maxIndex = Math.min(pages.length, maxIndex);
 		}
 
-		for(var i = 0; i < maxIndex; i++) {
-			pages.children[i].style.width = 100/maxIndex + '%';
+		// Add event listeners to nav bar
+		for (var i = 0; i < maxIndex; i++) {
 			(function(index){
 				tabs[index].addEventListener('click', function(){
 					update(index);
 				});
-			})(i)
+			})(i);
 		}
 
 		update(currIndex);

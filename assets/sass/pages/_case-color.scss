@@ -1,0 +1,41 @@
+/**
+ *
+ *	Case Study colors
+ *
+ */
+
+// Sets case study color by color INDEX
+@mixin case-color($color-index) {
+	$primary: nth($color-primary, $color-index);
+	$secondary: nth($color-secondary, $color-index);
+
+	.intro{
+		background-color: $primary;
+		.top-divider{
+			background-color: $secondary;
+		}
+		.website{
+			color: $secondary;
+		}
+	}
+	.bg-primary{
+		background-color: $primary;
+	}
+	.top-divider{
+		background-color: $primary;
+	}
+	.tab-slider{
+		@include tab-color($primary, $gray-light)
+	}
+	.link-effect{
+		@include link-color($primary);
+	}
+}
+
+// Uses helper mixin to set each case study's color
+.retailmenot{
+	@include case-color(1);	// Sets to first color in $color-primary and $color-secondary lists
+}
+.hackillinois{
+	@include case-color(2);
+}

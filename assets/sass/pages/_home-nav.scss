@@ -1,0 +1,55 @@
+/**
+ *	Homepage navbar
+ */
+
+#nav{
+	@include flexbox((
+ 		display: flex,
+		flex-wrap: nowrap,
+ 		flex-direction: column
+ 	));
+
+	position: fixed;
+	right: spacing(5);
+	top: 50%;
+	@include transform(translateY(-50%));
+
+	font-family: Lora, serif;
+	@include type-setting(1);
+	text-align: center;
+
+	.divider{
+		width: spacing(4);
+	}
+
+	.link-effect::after{	// Modify link effect bar size
+		width: 50%;
+		left: 25%;
+		bottom: 10%;
+	}
+}
+
+.nav-link{
+	width: 100%;
+	position: relative;
+
+	&:hover{
+		font-weight: 700;
+	}
+
+	&:hover::before{
+		position: absolute;		// ::before is right align in a center align text
+		left: -210px;					// Hacky solution- right align text with a set width,
+		width: 200px;					// Absolute position to same position
+		text-align: right;
+		content: attr(data-name);
+		font-style: italic;
+		font-weight: 400;
+	}
+}
+
+@media screen and (max-width: $bp-medium) {
+	#nav{
+		right: 4vw;
+	}
+}

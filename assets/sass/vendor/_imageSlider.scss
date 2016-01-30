@@ -166,8 +166,6 @@ $nav-font-size-m: 9px;					// Mobile nav label font size
 	@include transition(background-color 0.4s ease-in-out);
 
 	&.select{
-		//transform: scale(1.1, 1.1);
-		//@include transition(transform .1s ease-in-out);
 		background-color: $nav-selected-color;
 	}
 
@@ -176,9 +174,7 @@ $nav-font-size-m: 9px;					// Mobile nav label font size
 	}
 }
 
-
-
-@media screen and (max-width: $break-large){
+@media screen and (max-width: $bp-large){
 	.nav-spacing{
 		height: 12px;
 	}

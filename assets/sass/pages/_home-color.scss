@@ -1,0 +1,33 @@
+/**
+ *
+ *	Homepage colors
+ *
+ */
+
+// Applies color to each portfolio item by ORDER
+@for $i from 1 through length($color-primary) {
+	$current-index: #{length($color-primary)}n+#{$i};
+	$current-color: nth($color-primary, $i);
+
+	.portfolio-item:nth-of-type(#{length($color-primary)}n+#{$i}) {		// In case more items than colors
+		.top-divider{
+			background-color: $current-color;
+		}
+
+		.btn-effect{	 // button effect
+			@include button-color($current-color)
+		}
+
+		.link-effect{	// link effect
+			@include link-color($current-color);
+		}
+	}
+
+	.nav-link:nth-of-type(#{length($color-primary)}n+#{$i+1}) {	// $i + 1 because of home
+		@include link-color($current-color);
+	}
+}
+
+.nav-link:nth-child(1){		// First nav item is home
+	@include link-color($home-highlight);
+}

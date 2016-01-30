@@ -1,0 +1,84 @@
+/**
+ *
+ *	General layout & spacing classes
+ *
+ */
+
+// Adds spacing to bottom of element
+// Intended for spacing between major sections of content like .title and .col-two
+.bot-space{
+	margin-bottom: $case-base-padding*1.5;
+}
+
+// Left aligns the element if it is a direct child of .page-section
+.align{
+	width: $case-align-width;
+}
+
+// Centers element and text relative to parent
+.center{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	.top-divider{
+		margin: spacing(0);
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+// Column layouts for .page-section
+.col-two, .col-three{
+	width: 100%;
+	@include flexbox((
+ 		display: flex,
+		flex-wrap: nowrap,
+ 		flex-direction: row,
+		align-items: center,
+		align-content: flex-start
+ 	));
+}
+
+.col{
+	margin-right: 3vw;
+	margin-left: 3vw;
+}
+
+.col-two{
+	.col{
+		width: 100%/2;
+	}
+}
+
+.col-three{
+	.col{
+		width: 100%/3;
+	}
+}
+
+@media screen and (max-width: $bp-large){
+	.col-three{
+		@include flexbox((
+			flex-wrap: wrap
+ 		));
+		.col{
+			margin: 0;
+			margin-bottom: $case-base-padding/2;
+			width: 100%;
+		}
+	}
+}
+
+@media screen and (max-width: $bp-medium){
+	.col-two{
+		@include flexbox((
+			flex-wrap: wrap
+ 		));
+		.col{
+			margin: 0;
+			margin-bottom: $case-base-padding/2;
+			width: 100%;
+		}
+	}
+}

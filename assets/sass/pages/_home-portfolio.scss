@@ -1,8 +1,17 @@
+/**
+ *
+ *	Homepage portfolio section
+ *
+ */
+
+.portfolio{
+	position: relative;
+}
+
 // Left side
 .item-side{
-	//display:block;
-	margin-left: auto;
-	margin-right: $home-left-width/7;
+	width: $home-left-width;
+	padding-right: $home-left-width/7;
 	text-align: right;
 	@include flexbox((
  		display: flex,
@@ -13,7 +22,7 @@
  	));
 
 	.number{
-		font-family: Vollkorn, Lora, serif;
+		font-family: Lora, serif;
 		@include type-setting(1);
 		color: $gray;
 	}
@@ -21,20 +30,21 @@
 
 // Right side
 .item-main{
-	width: 100vw - $home-left-width - $home-right-padding;			// SUPER SHITTY
+	flex: 1; // takes up rest of the space
 	margin-bottom: spacing(5);
 
-	.name{
+	.title{
 		display: inline-block;
 		@include type-setting(4.5);
+		font-weight: 400;
 	}
 	.website{
 		display: inline-block;
 		margin-left: spacing(-1);
+		@include type-setting(0);
 		color: $gray;
 	}
-	.title{
-		font-family: Vollkorn, Lora, serif;
+	.desc{
 		font-size: font-setting(1);
 		line-height: line-setting(0);
 		color: $gray;
@@ -53,7 +63,7 @@
  	));
 }
 
-// main/case study divider
+// Main divider
 .portfolio-divider{
 	margin-bottom: spacing(2);
 	text-transform: uppercase;
@@ -74,8 +84,9 @@
 		}
 
 		hr{
-			width: 100%;
+			width: 80%;
 			height: 1px;
+			margin: 0;
 			margin-top: 13px;
 			background-color: $gray;
 		}
@@ -103,21 +114,12 @@
 		height: 4px;
 	}
 
-	.divider{		// gray divider
-		width: spacing(20);
-		height: 1px;
-		background-color: $gray-light;
-	}
-
-	.spec-name, a{
+	.spec-title,
+	.spec-list,
+	.spec-item{
 		float: right;
 		clear: both;
 		@include type-setting(.5);
-	}
-
-	.spec-name{
-		color: $gray;
-		text-transform: uppercase;
 	}
 
 	// item-main
@@ -146,41 +148,18 @@
 		margin-right: auto;
 		display: block;
 
-		// .btn
 		letter-spacing: 0px;
 		font-size: 1.2rem;
 		font-weight: 700;
-		// .btn-4
 		border-radius: 5px;
-		// .btn-4:before
 		&:before {
 			font-size: 150%;
 		}
 	}
 }
 
-// Applies color to each portfolio item
-@for $i from 1 through length($color-list) {
-	.item:nth-child(#{length($color-list)}n+#{$i}) {		// In case more items than colors
-		$current-color: nth($color-list, $i);
-
-		.top-divider{
-			background-color: $current-color;
-		}
-
-		.btn{
-			@include button-color($current-color)
-		}
-
-		// link hover effect
-		.effect{
-			@include effect-color($current-color);
-		}
-	}
-}
-
-// Breakpoint
-@media screen and (max-width: $break-large){
+// Breakpoints
+@media screen and (max-width: $bp-large){
 	.item-side{
 		width: 100%;
 		padding: 0;
@@ -194,6 +173,7 @@
 
 	.item-main{
 		width: 100%;
+		flex: none;
 	}
 
 	.portfolio-divider, .item-title, .item-content{
@@ -238,33 +218,11 @@
 			display: none;
 		}
 
-		.spec{
-			width: 100%;
-			margin-bottom: spacing(0);
-		}
-
-		.spec-name, a{
+		.spec-title,
+		.spec-list,
+		.spec-item{
 			float: none;
 			line-height: line-setting(-.5);
-		}
-
-		.spec-list{
-			@include flexbox((
- 				display: flex,
-				flex-wrap: wrap,
- 				flex-direction: row,
-				justify-content: flex-start
- 			));
-
-			a{
-				margin-right: spacing(0);
-				&:after {
-					content: ",";
-				}
-				&:last-child:after{
-					content: "";
-				}
-			}
 		}
 
 		.item-launch,.image-slider{

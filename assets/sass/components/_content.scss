@@ -1,0 +1,106 @@
+/**
+ *
+ *	Text and content base styles
+ *
+ */
+
+// Largest heading, usually case study name
+.title-super{
+	@include type-setting(5);
+	margin-bottom: spacing(1);
+	font-family: Lora, serif;
+	font-weight: 700;
+}
+
+// Ordinary heading
+.title{
+	@include type-setting(4);
+	font-family: Lora, serif;
+	font-weight: 700;
+}
+
+// Small heading for columns, small paragrphs, etc
+.title-sub{
+	@include type-setting(2.5);
+	line-height: line-setting(4);
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+// Description, usually under title
+.desc{
+	@include type-setting(1.5);
+	font-family: Lora, serif;
+}
+
+// Main body paragraph
+.body{
+	max-width: 650px;
+	margin-bottom: spacing(1);
+	@include type-setting(3.5);
+	line-height: line-setting(2.5);
+	font-family: Lora, serif;
+}
+
+// Small body paragraph
+.body-sub{
+	max-width: 650px;
+	@include type-setting(3);
+	line-height: line-setting(2);
+	font-family: Lora, serif;
+}
+
+// Colored bar
+.top-divider{
+	width: spacing(11);
+	height: 5px;
+	margin: spacing(1);
+	margin-left: 0;
+	margin-right: auto;
+}
+
+// Gray divider
+.divider{
+	width: spacing(20);
+	height: 1px;
+	background-color: $gray-light;
+}
+
+// Link in the case study intro
+.website{
+	@include type-setting(1);
+}
+
+// Spec
+.spec-title{
+	color: $gray;
+	text-transform: uppercase;
+	margin-top: spacing(-1);
+}
+
+@media screen and (max-width: $bp-large){
+	.spec{
+		width: 100%;
+		margin-bottom: spacing(0);
+	}
+
+	.spec-list{
+		@include flexbox((
+			display: flex,
+			flex-wrap: wrap,
+			flex-direction: row,
+			justify-content: flex-start
+		));
+	}
+
+	.spec-item{
+		margin-right: spacing(0);
+		&:after {
+			content: ",";
+		}
+		&:last-child:after{
+			content: "";
+		}
+	}
+
+}
