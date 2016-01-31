@@ -6,7 +6,7 @@
 
 // base type settings
 $base-font-size: 2rem;
-$base-line-height: 1 * $base-font-size;
+$base-line-height: .8 * $base-font-size;
 
 @function font-setting($level) {
   @return ((($level + 3)/3) * $base-spacing);
