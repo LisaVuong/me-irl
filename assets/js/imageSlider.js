@@ -87,6 +87,7 @@ var ImageSlider = function () {
 			var navIndex = indexMap(currIndex);
 			var dotIndex = (navIndex > 0) ? currIndex-config.spacing[navIndex-1]+1 : currIndex+1;
 			navLists[navIndex].children[dotIndex].className = CLASSNAME.DOT;
+
 			// Calculates indices of newIndex, select dot
 			navIndex = indexMap(newIndex);
 			dotIndex = (navIndex > 0) ? newIndex-config.spacing[navIndex-1]+1 : newIndex+1;
@@ -126,11 +127,10 @@ var ImageSlider = function () {
 		var label = document.createElement('div');
 		list.className = CLASSNAME.LIST;
 		label.className = CLASSNAME.LABEL;
-		text = text ? text : '';
-		label.appendChild(document.createTextNode(text));
-		if(config.labels.length > 0) {
-			list.appendChild(label);
+		if(text) {
+			label.appendChild(document.createTextNode(text));
 		}
+		list.appendChild(label);
 		return list;
 	};
 

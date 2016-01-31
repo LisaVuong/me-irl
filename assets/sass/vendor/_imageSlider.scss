@@ -122,13 +122,15 @@ $nav-font-size-m: 9px;					// Mobile nav label font size
 
 .slider-nav{
 	width: 100%;
+	height: 100%;
 	margin-top: 20px;
 	@include flexbox((
     display: flex,
 		flex-wrap: nowrap,
     flex-direction: row,
 		justify-content: center,
-		align-content: center
+		align-content: stretch,
+		align-items: stretch
   ));
 }
 
@@ -139,8 +141,9 @@ $nav-font-size-m: 9px;					// Mobile nav label font size
 }
 
 .nav-label{
-	min-height: 20px;
+	margin-bottom: auto;
 	margin-left: 5px;
+	padding-bottom: 8px;
 	font-size: $nav-font-size;
 	color: $nav-font-color;
 }
@@ -148,15 +151,16 @@ $nav-font-size-m: 9px;					// Mobile nav label font size
 .nav-spacing{
 	width: 1px;
 	height: 20px;
+	margin-top: auto;
 	margin-left: 10px;
 	margin-right: 10px;
-	margin-top: auto;
 	background-color: $nav-color;
 }
 
 .nav-dot{
 	width: $nav-dot-size;
 	height: $nav-dot-size;
+	margin-top: auto;
 	margin-right: 5px;
 	margin-left: 5px;
 	padding: 0;
