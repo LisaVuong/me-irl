@@ -88,6 +88,7 @@
 	.links{
 		width: 100%;
 		@include type-setting(1);
+		line-height: line-setting(1.8);
 		@include flexbox((
   		display: flex,
   		flex-direction: row,

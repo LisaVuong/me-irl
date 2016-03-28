@@ -8,14 +8,14 @@
 .title-super{
 	@include type-setting(5);
 	margin-bottom: spacing(1);
-	font-family: Lora, serif;
+	font-family: Karla serif;
 	font-weight: 700;
 }
 
 // Ordinary heading
 .title{
 	@include type-setting(4);
-	font-family: Lora, serif;
+	font-family: Karla, serif;
 	font-weight: 700;
 }
 
@@ -30,7 +30,7 @@
 // Description, usually under title
 .desc{
 	@include type-setting(1.5);
-	font-family: Lora, serif;
+	font-family: Volkorn, serif;
 }
 
 // Main body paragraph

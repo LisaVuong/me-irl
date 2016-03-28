@@ -11,10 +11,10 @@ $slider-max-width: 100%;		// Image default max width;
 $next-arrow-img: url('../img/slider-arrow-right.png');	// Icon for next arrow
 $prev-arrow-img: url('../img/slider-arrow-left.png');		// Icon for prev arrow
 $arrow-size: 35px;																			// Arrow diameter
-$arrow-position: 50px;																	// Arrow distance from gallery
+$arrow-position: -20px;																	// Arrow distance from gallery
 
-$nav-dot-size: 13px;						// Nav dot diameter
-$nav-font-size: 12px;						// Nav label font size
+$nav-dot-size: 10px;						// Nav dot diameter
+$nav-font-size: 10px;						// Nav label font size
 $nav-font-color: gray;					// Nav label font color
 $nav-color: #d8d8d8;						// Nav dot unselected color
 $nav-selected-color: #606060;		// Nav dot selected and hover color

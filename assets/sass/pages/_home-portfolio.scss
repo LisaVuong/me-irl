@@ -11,7 +11,7 @@
 // Left side
 .item-side{
 	width: $home-left-width;
-	padding-right: $home-left-width/7;
+	padding-right: $home-left-width/12;
 	text-align: right;
 	@include flexbox((
  		display: flex,
@@ -22,7 +22,7 @@
  	));
 
 	.number{
-		font-family: Lora, serif;
+		font-family: Volkorn, serif;
 		@include type-setting(1);
 		color: $gray;
 	}
@@ -36,17 +36,18 @@
 	.title{
 		display: inline-block;
 		@include type-setting(4.5);
-		font-weight: 400;
+		font-weight: 700;
 	}
 	.website{
 		display: inline-block;
 		margin-left: spacing(-1);
-		@include type-setting(0);
+		@include type-setting(0.7);
+		font-style: italic;
 		color: $gray;
 	}
 	.desc{
-		font-size: font-setting(1);
-		line-height: line-setting(0);
+		font-size: font-setting(2);
+		line-height: line-setting(1);
 		color: $gray;
 	}
 }
@@ -68,6 +69,7 @@
 	margin-bottom: spacing(2);
 	text-transform: uppercase;
 	@include type-setting(1);
+	font-weight: 700;
 	color: $gray;
 
 	.item-main{
@@ -103,6 +105,8 @@
 // Portfolio item content
 .item-content{
 	// item-side
+	margin-bottom: 70px;
+
 	hr{
 		margin: spacing(0);
 		margin-left: auto;
@@ -112,6 +116,14 @@
 	.top-divider{		// colored divider
 		width: spacing(11);
 		height: 4px;
+	}
+
+	.spec-title{
+		font-weight: 700;
+	}
+
+	.spec-item{
+		font-weight: 600;
 	}
 
 	.spec-title,
