@@ -150,8 +150,8 @@
 	}
 
 	.item-launch, .image-slider{
-		width: 85%;
-		max-width: 85%;
+		width: 100%;
+		max-width: 100%;
 	}
 }
 
@@ -159,7 +159,7 @@
 .launch-button{
 	// width: spacing(70);
 	height: 100%;
-	margin-left: auto;
+	margin-left: 10px;
 	margin-right: auto;
 	padding: 18px 40px; 
 	display: block;
