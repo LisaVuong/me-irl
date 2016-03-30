@@ -88,9 +88,9 @@
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 
-	left: 70%;
+	right: 20px;
 	opacity: 0;
-	top: 0;
+	top: -6px;
 
 	content: "\e00d";
 }
@@ -109,6 +109,6 @@
 }
 
 .btn-effect:hover:before {
-	left: 80%;
+	right: 14px;
 	opacity: 1;
 }
