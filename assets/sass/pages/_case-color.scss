@@ -10,20 +10,20 @@
 	$secondary: nth($color-secondary, $color-index);
 
 	.intro{
-		background-color: $primary;
+		/*background-color: $primary;
 		.top-divider{
 			background-color: $secondary;
 		}
 		.website{
 			color: $secondary;
-		}
+		}*/
 	}
-	.bg-primary{
+	/*.bg-primary{
 		background-color: $primary;
 	}
 	.top-divider{
 		background-color: $primary;
-	}
+	}*/
 	.tab-slider{
 		@include tab-color($primary, $gray-light)
 	}
@@ -34,8 +34,8 @@
 
 // Uses helper mixin to set each case study's color
 .retailmenot{
-	@include case-color(1);	// Sets to first color in $color-primary and $color-secondary lists
+	@include case-color(4);	// Sets to first color in $color-primary and $color-secondary lists
 }
 .hackillinois{
-	@include case-color(2);
+	@include case-color(5);
 }

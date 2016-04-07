@@ -15,6 +15,10 @@
 </head>
 
 <body id="home">
+	<!-- Preloader -->
+	<div id="preloader">
+    	<div id="status">&nbsp;</div>
+	</div>
 	<nav id="nav">	<!-- TODO: fix -->
 		<a class="nav-link link-effect link-after" data-name="Home">h</a>
 		<hr class="divider">
@@ -35,7 +39,7 @@
 
 	<section class="splash">
 		<header class="splash-title">
-			<h1 class="logo"><a href="index.html">Hello, I'm Lisa</a></h1>
+			<h1 class="logo">Hello, I'm Lisa</h1>
 			<p class="about">
 			I am currently a senior studying graphic design at the University of Illinois at Urbana-Champaign with a passion for digital product design.
 			<br>
@@ -327,7 +331,7 @@
 					</p>
 					<figure class="image-slider"
 						 			data-spacing="6"
-						 			data-labels="Game, Wires">
+						 			data-labels="App, Wires">
 						<img class="gallery-image" src="assets/img/livelist_1.png"/>
 						<img class="gallery-image" src="assets/img/livelist_2.png"/>
 						<img class="gallery-image" src="assets/img/livelist_3.png"/>
@@ -889,8 +893,8 @@
 				<form class="item-launch" action="https://naturalselection.lisavuong.com">
 					<button class="launch-button btn-effect">Launch Website</button>
 				</form>
-
 			</header>
+
 			<div class="item-content">
 				<aside class="item-side">
 					<hr class="top-divider">
@@ -1017,11 +1021,6 @@
 		</header>
 	</article>
 				
-
-
-				
-		
-
 	<!--<article class="portfolio-item">
 			<header class="item-title">
 				<aside class="item-side">
@@ -1070,10 +1069,21 @@
 			</div>
 		</article>-->
 
-
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
 	<script src="assets/js/velocity.min.js"></script>
 	<script src="assets/js/hammer.min.js"></script>
 	<script src="assets/js/imageSlider.js"></script>
 	<script src="assets/js/script.js"></script>
+
+
+	<script type="text/javascript">
+    //<![CDATA[
+        $(window).load(function() { // makes sure the whole site is loaded
+            $('#status').fadeOut(); // will first fade out the loading animation
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+            $('body').delay(350).css({'overflow':'visible'});
+        })
+    //]]>
+	</script>
 </body>
 </html>

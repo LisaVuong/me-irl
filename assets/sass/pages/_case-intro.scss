@@ -6,7 +6,7 @@
 
 .intro{
 	padding: $case-base-padding;
-	color: white;
+	padding-top: 80px;
 
 	.wrapper{
 		padding-top: $case-base-padding;
@@ -14,12 +14,21 @@
 	}
 	.title{
 		font-family: Karla, sans-serif;
-		font-weight: 400;
-		@include type-setting(9);
-		line-height: line-setting(6);
+		font-weight: 700;
+		@include type-setting(7);
+		display: inline-block;
+	}
+	.website{
+		display: inline-block;
+		margin-left: spacing(-1);
+		@include type-setting(1);
+		font-style: italic;
+		color: $gray;
 	}
 	.desc{
-		@include type-setting(1.5);
+		@include type-setting(2.5);
+		line-height: line-setting(1.6);
+		color: $gray;
 	}
 	.top-divider{
 		height: 3px;
@@ -28,11 +37,8 @@
 		margin-right: auto;
 	}
 	.body{
-		max-width: 600px;
+		max-width: 650px;
 		font-family: Karla, sans-serif;
-	}
-	.website{
-		@include type-setting(1);
 	}
 }
 

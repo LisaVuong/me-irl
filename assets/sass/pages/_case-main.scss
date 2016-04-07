@@ -60,6 +60,10 @@
 	}
 }
 
+img{
+	max-width: 1000px;
+}
+
 @media screen and (max-width: $bp-xlarge){
 	.side{
 		width: 100%;

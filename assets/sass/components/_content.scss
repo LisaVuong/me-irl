@@ -30,16 +30,16 @@
 // Description, usually under title
 .desc{
 	@include type-setting(1.5);
-	font-family: Vol lkorn, serif;
+	font-family: Vollkorn, serif;
 }
 
 // Main body paragraph
 .body{
 	max-width: 650px;
 	margin-bottom: spacing(1);
-	@include type-setting(3.5);
+	@include type-setting(2.5);
 	line-height: line-setting(2.5);
-	font-family: Lora, serif;
+	font-family: Karla, serif;
 }
 
 // Small body paragraph
@@ -47,7 +47,7 @@
 	max-width: 650px;
 	@include type-setting(3);
 	line-height: line-setting(2);
-	font-family: Lora, serif;
+	font-family: Karla, serif;
 }
 
 // Colored bar
