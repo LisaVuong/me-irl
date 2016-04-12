@@ -5,9 +5,12 @@
  */
 
 // Slider
-.tab-nav a{
+.tab-nav{  
+
+	a{
 	@include type-setting(1.5);
 	font-weight: 700;
+	}	
 }
 
 .nav-wrapper{
@@ -60,9 +63,6 @@
 	}
 }
 
-img{
-	max-width: 1000px;
-}
 
 @media screen and (max-width: $bp-xlarge){
 	.side{

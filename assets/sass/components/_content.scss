@@ -37,7 +37,7 @@
 .body{
 	max-width: 650px;
 	margin-bottom: spacing(1);
-	@include type-setting(2.5);
+	@include type-setting(2.2);
 	line-height: line-setting(2.5);
 	font-family: Karla, serif;
 }
@@ -77,6 +77,16 @@
 	text-transform: uppercase;
 	margin-top: spacing(-1);
 }
+
+/*.image{
+	img{
+		width: 1000px;
+	}
+	
+	p{
+		font-size:
+	}
+}*/
 
 @media screen and (max-width: $bp-large){
 	.spec{
