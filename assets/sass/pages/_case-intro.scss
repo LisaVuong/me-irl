@@ -12,12 +12,6 @@
 		padding-top: $case-base-padding;
 		padding-bottom: $case-base-padding;
 	}
-	.title{
-		font-family: Karla, sans-serif;
-		font-weight: 700;
-		@include type-setting(7);
-		display: inline-block;
-	}
 	.website{
 		display: inline-block;
 		margin-left: spacing(-1);

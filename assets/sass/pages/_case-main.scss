@@ -4,13 +4,23 @@
  *
  */
 
+.case-wrapper {
+	max-width: 800px;
+	margin: 0 auto;
+
+	.body {
+		margin-bottom: 30px;
+		max-width: 100%;
+	}
+}
+
 // Slider
-.tab-nav{  
+.tab-nav{
 
 	a{
 	@include type-setting(1.5);
 	font-weight: 700;
-	}	
+	}
 }
 
 .nav-wrapper{
@@ -19,18 +29,126 @@
 }
 
 // Slider Pages
-.page-section{
-	padding: $case-base-padding;
+.case-section{
+	padding: $case-base-padding*2;
 	padding-top: $case-base-padding*1.5;
 	padding-bottom: $case-base-padding*1.5;
+	text-align: left;
+	// @include flexbox((
+ // 		display: flex,
+	// 	flex-wrap: wrap,
+ // 		flex-direction: row,
+	// 	justify-content: center,
+	// 	align-items: center,
+	// 	align-content: flex-start
+ // 	));
+}
+
+.case-inline-image, .intro {
 	@include flexbox((
  		display: flex,
-		flex-wrap: wrap,
  		flex-direction: row,
 		justify-content: center,
 		align-items: center,
 		align-content: flex-start
  	));
+}
+
+.intro {
+	.intro-summary {
+		margin-left: 40px;
+	}
+}
+
+.case-inline-image {
+	img {
+		max-width: 250px;
+	}
+
+	> div {
+		margin-left: 20px;
+	}
+}
+
+.intro-stats {
+	width: 100%;
+	max-width: 250px;
+
+	.stats-top {
+		border: 2px solid purple;
+	}
+
+	.stats-hr {
+		border: none;
+		border-bottom: 1px solid $gray-light;
+		margin: 12px 0;
+	}
+
+	h2, h3, h4, p {
+		font-weight: 700;
+	}
+
+	h3, h4 {
+		color: $gray;
+	}
+
+	h2 {
+		margin-bottom: 2px;
+	}
+
+	h4 {
+		text-transform: uppercase;
+		margin-bottom: 4px;
+	}
+}
+
+.case-title, .case-header{
+	font-family: Karla, sans-serif;
+	font-weight: 700;
+	@include type-setting(7);
+	display: inline-block;
+}
+
+.case-header {
+	margin-bottom: 20px;
+	@include type-setting(5);
+}
+
+.case-image {
+	width: 100%;
+	text-align: center;
+
+	img {
+		width: 100%;
+	}
+
+	span {
+		display: block;
+		padding: 0 10px;
+		margin-top: 10px;
+
+		color: $gray;
+		font-style: italic;
+	}
+}
+
+.case-image-small {
+	max-width: 300px;
+	margin-bottom: 20px;
+
+	img { width: 100%; }
+}
+
+.case-subheader {
+	color: $gray;
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+.case-hr {
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid $gray-light;
 }
 
 // Side element, usually used with spec content
@@ -103,5 +221,11 @@
 				content: "";
 			}
 		}
+	}
+}
+
+@media screen and (max-width: $bp-medium) {
+	.case-section{
+		padding: $case-base-padding;
 	}
 }
